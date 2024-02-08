@@ -1,0 +1,8 @@
+{
+  "name": "Navbar",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "widgets/Navbar/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {}
+}

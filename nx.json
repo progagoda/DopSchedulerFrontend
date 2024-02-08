@@ -44,6 +44,16 @@
       "options": {
         "targetName": "test"
       }
+    },
+    {
+      "plugin": "@nx/vite/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "previewTargetName": "preview",
+        "testTargetName": "test",
+        "serveTargetName": "serve",
+        "serveStaticTargetName": "serve-static"
+      }
     }
   ],
   "defaultProject": "monorepo",
@@ -60,9 +70,17 @@
       },
       "library": {
         "style": "styled-components",
-        "linter": "eslint"
+        "linter": "eslint",
+        "unitTestRunner": "vitest"
       }
     }
   },
-  "nxCloudAccessToken": "MmZjYWU3OWMtMTZhZC00MzdmLWFlMjAtMWNkNGY5YTFmODk5fHJlYWQtd3JpdGU="
+  "nxCloudAccessToken": "MmZjYWU3OWMtMTZhZC00MzdmLWFlMjAtMWNkNGY5YTFmODk5fHJlYWQtd3JpdGU=",
+  "targetDefaults": {
+    "@nx/js:tsc": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "inputs": ["production", "^production"]
+    }
+  }
 }
