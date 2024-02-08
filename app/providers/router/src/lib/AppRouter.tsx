@@ -1,4 +1,4 @@
-import { Route, Routes, RouteProps } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import { AppRoutes, RouterPath } from './routerConfig';
 import { Main } from '@pages/main';
