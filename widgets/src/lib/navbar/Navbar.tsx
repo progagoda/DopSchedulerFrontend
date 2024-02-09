@@ -1,4 +1,6 @@
 import { Layout, Menu } from 'antd';
+import React from 'react';
+import { LangSwitcher } from '../widgets';
 
 const { Header } = Layout;
 /* eslint-disable-next-line */
@@ -9,7 +11,7 @@ const items = new Array(15).fill(null).map((_, index) => ({
   label: `nav ${index + 1}`,
 }));
 
-export function Navbar(props: NavbarProps) {
+export const Navbar=(props: NavbarProps)=> {
   return (
     <Header style={{ display: 'flex', alignItems: 'center' }}>
     <div className="demo-logo" />
@@ -20,8 +22,9 @@ export function Navbar(props: NavbarProps) {
       items={items}
       style={{ flex: 1, minWidth: 0 }}
     />
+    <LangSwitcher/>
   </Header>
   );
 }
 
-export default Navbar;
+

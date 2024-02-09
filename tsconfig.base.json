@@ -16,13 +16,13 @@
     "baseUrl": ".",
     "paths": {
       "@app/providers/router": ["app/providers/router/src/index.ts"],
+      "@widgets": ["widgets/src/index.ts"],
       "@pages/main": ["pages/main/src/index.ts"],
       "@pages/shell": ["pages/shell/src/index.ts"],
       "@utils/api": ["utils/api/src/index.ts"],
       "@utils/helpers": ["utils/helpers/src/index.ts"],
       "@utils/i18n": ["utils/i18n/src/index.ts"],
-      "@utils/types": ["utils/types/src/index.ts"],
-      "@widgets/Navbar": ["widgets/Navbar/src/index.ts"]
+      "@utils/types": ["utils/types/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

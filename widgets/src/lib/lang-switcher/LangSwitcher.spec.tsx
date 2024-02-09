@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import Navbar from './Navbar';
+import LangSwitcher from './LangSwitcher';
 
-describe('Navbar', () => {
+describe('LangSwitcher', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Navbar />);
+    const { baseElement } = render(<LangSwitcher />);
     expect(baseElement).toBeTruthy();
   });
 });
