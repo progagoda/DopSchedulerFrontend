@@ -1,5 +1,5 @@
 {
-  "extends": ["plugin:@nx/react", "../.eslintrc.base.json"],
+  "extends": ["plugin:@nx/react", "../.eslintrc.base.json", "plugin:i18next/recommended"],
   "ignorePatterns": ["!**/*"],
   "overrides": [
     {
@@ -14,5 +14,6 @@
       "files": ["*.js", "*.jsx"],
       "rules": {}
     }
-  ]
+  ],
+  "plugins": ["i18next"]
 }

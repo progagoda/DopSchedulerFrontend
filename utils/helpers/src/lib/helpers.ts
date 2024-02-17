@@ -1,3 +1,3 @@
-export function helpers(): string {
-  return 'helpers';
+export const reverseString = (s: string) =>{
+   return s.split('').reverse().join('');
 }

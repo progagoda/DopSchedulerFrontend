@@ -1,7 +1,13 @@
-import { helpers } from './helpers';
+import * as helpers from './helpers';
 
-describe('helpers', () => {
-  it('should work', () => {
-    expect(helpers()).toEqual('helpers');
+describe('reverseString', () => {
+  it('basic use', () => {
+    expect(helpers.reverseString('helpers')).toBe('srepleh');
+  });
+  it('with upper case', () => {
+    expect(helpers.reverseString('Helpers')).toBe('srepleH');
+  });
+  it('with empty string', () => {
+    expect(helpers.reverseString('')).toBe('');
   });
 });

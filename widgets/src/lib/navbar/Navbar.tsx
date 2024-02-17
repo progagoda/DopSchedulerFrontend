@@ -1,5 +1,4 @@
 import { Layout, Menu } from 'antd';
-import React from 'react';
 import { LangSwitcher } from '../widgets';
 
 const { Header } = Layout;

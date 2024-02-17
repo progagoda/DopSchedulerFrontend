@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 
 import {LangSwitcher, Navbar} from './widgets';
 
-describe('Widgets', () => {
+describe('Render Widgets', () => {
   it('Navbar render successfully', () => {
     const { baseElement } = render(<Navbar />);
     expect(baseElement).toBeTruthy();
