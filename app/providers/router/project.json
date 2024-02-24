@@ -1,8 +1,0 @@
-{
-  "name": "app-providers-router",
-  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "app/providers/router/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {}
-}
