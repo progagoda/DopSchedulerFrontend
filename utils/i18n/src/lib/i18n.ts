@@ -10,7 +10,6 @@ i18n
   .init({
     fallbackLng: 'ru',
     debug: true,
-    lng: 'cimode' ,
     interpolation: {
       escapeValue: false,
     }
