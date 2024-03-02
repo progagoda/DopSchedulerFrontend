@@ -11,11 +11,10 @@ const Component = ()=>{
 export function App() {
   return (
   <Suspense fallback="Loading...">
-    <Navbar/>
+     <Navbar/>
     <Component/>
     <AppRouter />
   </Suspense>
-
   );
 }
 

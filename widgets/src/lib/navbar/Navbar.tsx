@@ -13,7 +13,7 @@ const items = new Array(15).fill(null).map((_, index) => ({
 export const Navbar=(props: NavbarProps)=> {
   return (
     <Header style={{ display: 'flex', alignItems: 'center' }}>
-    <div className="demo-logo" />
+    <div className="demo-logo"/>
     <Menu
       theme="dark"
       mode="horizontal"
