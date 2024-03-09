@@ -17,15 +17,15 @@
     "paths": {
       "@app": ["src/app/src/index.ts"],
       "@app/providers/router": ["app/providers/router/src/index.ts"],
-      "@pages/main": ["pages/main/src/index.ts"],
-      "@pages/shell": ["pages/shell/src/index.ts"],
-      "@utils/api": ["utils/api/src/index.ts"],
-      "@utils/helpers": ["utils/helpers/src/index.ts"],
-      "@utils/i18n": ["utils/i18n/src/index.ts"],
-      "@utils/types": ["utils/types/src/index.ts"],
-      "@utils/ui": ["utils/ui/src/index.ts"],
+      "@pages/main": ["src/pages/main/src/index.ts"],
+      "@pages/shell": ["src/pages/shell/src/index.ts"],
+      "@utils/api": ["src/utils/api/src/index.ts"],
+      "@utils/helpers": ["src/utils/helpers/src/index.ts"],
+      "@utils/i18n": ["src/utils/i18n/src/index.ts"],
+      "@utils/types": ["src/utils/types/src/index.ts"],
+      "@utils/ui": ["src/utils/ui/src/index.ts"],
       "@widgets": ["widgets/src/index.ts"]
     }
   },
-  "exclude": ["node_modules", "tmp"],
+  "exclude": ["node_modules", "tmp"]
 }
