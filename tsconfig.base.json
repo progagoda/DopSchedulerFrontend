@@ -24,7 +24,7 @@
       "@utils/i18n": ["src/utils/i18n/src/index.ts"],
       "@utils/types": ["src/utils/types/src/index.ts"],
       "@utils/ui": ["src/utils/ui/src/index.ts"],
-      "@widgets": ["widgets/src/index.ts"]
+      "@widgets": ["src/widgets/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
