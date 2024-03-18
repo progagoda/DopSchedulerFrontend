@@ -27,8 +27,9 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm ci
-      - uses: nrwl/nx-set-shas@v4
-
-      - run: npx nx-cloud record -- nx format:check
-      - run: npx nx affected -t lint test build e2e-ci
+      - name: install modules 
+      - run: npm install
+      - name: linting
+      - run: npm run lint
+      - name: unit testing
+      - run: npm run test

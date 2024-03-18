@@ -2,7 +2,10 @@
   "name": "@utils/i18n",
   "version": "0.0.1",
   "dependencies": {
-    "tslib": "^2.3.0"
+    "i18next": "^23.8.2",
+    "react-i18next": "^14.0.5",
+    "i18next-resources-to-backend": "^1.2.0",
+    "i18next-http-backend": "^2.4.3"
   },
   "type": "commonjs",
   "main": "./src/index.js",

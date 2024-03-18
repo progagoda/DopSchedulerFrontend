@@ -3,7 +3,7 @@ import { I18nextProvider } from 'react-i18next';
 import { Preview } from '@storybook/react';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {i18n} from '@utils/i18n';
-import React, { Suspense } from 'react';
+import { Suspense } from 'react';
 export const globalTypes = {
     locale: {
       name: 'Locale',

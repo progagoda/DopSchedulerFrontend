@@ -18,17 +18,17 @@ export const Navbar=(props: NavbarProps)=> {
   }));
 
   return (
-    <Header style={{ display: 'flex', alignItems: 'center' }}>
-    <div className="demo-logo"/>
-    <Menu
+    <Header style={{ display: 'flex', alignItems: 'center' }} data-testid= 'navbar'>
+      <div className="demo-logo"/>
+      <Menu
       theme="dark"
       mode="horizontal"
       defaultSelectedKeys={['2']}
       items={items}
       style={{ flex: 1, minWidth: 0 }}
     />
-    <LangSwitcher/>
-  </Header>
+      <LangSwitcher/>
+    </Header>
   );
 }
 

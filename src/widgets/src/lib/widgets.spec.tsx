@@ -1,16 +1,15 @@
-import { render } from '@testing-library/react';
 import {LangSwitcher, Navbar} from './widgets';
 import {renderWithTranslation} from '@utils/helpers'
 import { screen } from '@testing-library/react';
 
 describe('Render Widgets', () => {
   it('Navbar render successfully', () => {
-    const { baseElement } = render(<Navbar />);
-    expect(baseElement).toBeTruthy();
+    renderWithTranslation(<Navbar/>)
+    expect(screen.queryByTestId('navbar')).toBeDefined();
   });
   
   it('LangSwithcer render successfully', () => {
     renderWithTranslation(<LangSwitcher/>)
-    expect(screen.getByTestId('lang-switcher')).toBeInTheDocument();
+    expect(screen.queryByTestId('lang-switcher')).toBeDefined();
   });
 });

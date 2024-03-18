@@ -3,8 +3,9 @@ import { Route, Routes } from 'react-router-dom';
 import { RouterPath } from './routerConfig';
 import { Main } from '@pages/main';
 import { Shell } from '@pages/shell';
-
 import { AppRoutes, TRouterConfig } from '@utils/types';
+import { App } from 'antd';
+import { v4 as uuid } from 'uuid'
 export const AppRouter = () => {
   
   const routerConfig: TRouterConfig = {
@@ -16,13 +17,17 @@ export const AppRouter = () => {
       path: RouterPath.shell,
       element: <Shell />,
     },
+    [AppRoutes.DEFAULT]: {
+      path: RouterPath.app,
+      element: <App />,
+    },
   };
 
 
   return (
-    <Routes>
+    <Routes key={uuid()}>
       {Object.values(routerConfig).map(({ element, path }) => (
-        <Route path={path} element={element} />
+        <Route key={path} path={path} element={element} />
       ))}
     </Routes>
   );

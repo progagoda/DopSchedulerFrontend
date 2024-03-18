@@ -1,7 +1,7 @@
 {
   "extends": [
     "plugin:@nx/react",
-    "../../.eslintrc.base.json",
+    "../../../.eslintrc.base.json",
     "plugin:i18next/recommended"
   ],
   "ignorePatterns": ["!**/*", "storybook-static"],
