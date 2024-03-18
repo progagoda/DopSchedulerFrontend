@@ -23,9 +23,16 @@
     },
     {
       "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nx/typescript", "plugin:react/jsx-runtime" ],
+      "extends": ["plugin:@nx/typescript", "plugin:react/jsx-runtime"],
+      "plugins": ["simple-import-sort"],
       "rules": {
-        "react/jsx-indent": ["error", 2]
+        "react/jsx-indent": ["error", 2],
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error"
+      },
+      "parserOptions": {
+        "sourceType": "module",
+        "ecmaVersion": "latest"
       }
     },
     {

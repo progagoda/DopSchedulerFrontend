@@ -1,9 +1,9 @@
-import { BrowserRouter } from 'react-router-dom'
-import { I18nextProvider } from 'react-i18next';
 import { Preview } from '@storybook/react';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {i18n} from '@utils/i18n';
 import { Suspense } from 'react';
+import { I18nextProvider } from 'react-i18next';
+import { BrowserRouter } from 'react-router-dom'
+
 export const globalTypes = {
     locale: {
       name: 'Locale',

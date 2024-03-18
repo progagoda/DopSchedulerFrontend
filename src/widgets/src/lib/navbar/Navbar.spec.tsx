@@ -1,6 +1,7 @@
-import {Navbar} from './Navbar';
-import {renderWithTranslation} from '@utils/helpers'
 import { screen } from '@testing-library/react';
+import {renderWithTranslation} from '@utils/helpers'
+
+import {Navbar} from './Navbar';
 
 describe('Navbar component', () => {
   it('should render successfully', () => {

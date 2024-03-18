@@ -1,11 +1,11 @@
-import { Route, Routes } from 'react-router-dom';
-
-import { RouterPath } from './routerConfig';
 import { Main } from '@pages/main';
 import { Shell } from '@pages/shell';
 import { AppRoutes, TRouterConfig } from '@utils/types';
 import { App } from 'antd';
+import { Route, Routes } from 'react-router-dom';
 import { v4 as uuid } from 'uuid'
+
+import { RouterPath } from './routerConfig';
 export const AppRouter = () => {
   
   const routerConfig: TRouterConfig = {

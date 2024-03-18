@@ -1,5 +1,6 @@
 {
     "testExample": "Test Example",
     "main": "main",
-    "shell": "shell"
+    "shell": "shell",
+    "app": "default"
 }

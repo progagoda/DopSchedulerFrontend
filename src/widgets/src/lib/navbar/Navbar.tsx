@@ -1,8 +1,9 @@
-import { Layout, Menu } from 'antd';
-import { LangSwitcher } from '../widgets';
-import { Link } from 'react-router-dom';
 import { AppRoutes } from '@utils/types';
+import { Layout, Menu } from 'antd';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+
+import { LangSwitcher } from '../widgets';
 
 
 const { Header } = Layout;

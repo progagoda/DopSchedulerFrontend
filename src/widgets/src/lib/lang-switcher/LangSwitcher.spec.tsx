@@ -1,6 +1,7 @@
-import LangSwitcher from './LangSwitcher';
-import {renderWithTranslation} from '@utils/helpers'
 import { screen } from '@testing-library/react';
+import {renderWithTranslation} from '@utils/helpers'
+
+import LangSwitcher from './LangSwitcher';
 describe('LangSwitcher', () => {
   it('should render successfully', () => {
     renderWithTranslation(<LangSwitcher/>)

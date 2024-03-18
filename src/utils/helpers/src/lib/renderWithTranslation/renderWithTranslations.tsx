@@ -1,6 +1,6 @@
-import React, {ReactNode } from "react";
 import {render} from '@testing-library/react'
 import {i18n} from '@utils/i18n';
+import React, {ReactNode } from "react";
 import { I18nextProvider } from 'react-i18next';
 
 export function renderWithTranslation(component: ReactNode ){

@@ -1,6 +1,8 @@
-import {LangSwitcher, Navbar} from './widgets';
-import {renderWithTranslation} from '@utils/helpers'
 import { screen } from '@testing-library/react';
+import {renderWithTranslation} from '@utils/helpers'
+
+import {LangSwitcher, Navbar} from './widgets';
+
 
 describe('Render Widgets', () => {
   it('Navbar render successfully', () => {

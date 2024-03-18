@@ -30,3 +30,7 @@ jobs:
       - run: npm install
       - run: npm run lint
       - run: npm run test
+      - run: npm run storybook:ui:build
+      - run: npm run ui:test:ui
+      - run: npm run storybook:widgets:build
+      - run: npm run widgets:test:ui

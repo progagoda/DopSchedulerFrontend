@@ -1,8 +1,8 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Navbar } from './Navbar';
-
-import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
+import type { Meta, StoryObj } from '@storybook/react';
+import { within } from '@storybook/testing-library';
+
+import { Navbar } from './Navbar';
 
 const meta: Meta<typeof Navbar> = {
   component: Navbar,

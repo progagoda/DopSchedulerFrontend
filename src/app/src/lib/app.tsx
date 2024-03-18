@@ -1,9 +1,11 @@
-import {AppRouter} from './providers/router/AppRouter';
+import '@utils/i18n'
+
 import { Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
-import {Navbar} from 'src/widgets/src';
-import '@utils/i18n'
 import { BrowserRouter } from 'react-router-dom';
+import {Navbar} from 'src/widgets/src';
+
+import {AppRouter} from './providers/router/AppRouter';
 
 const Component = ()=>{
   const {t} = useTranslation();
