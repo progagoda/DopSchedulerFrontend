@@ -23,28 +23,23 @@ jobs:
       # - run: npx nx-cloud start-ci-run --distribute-on="5 linux-medium-js" --stop-agents-after="e2e-ci"
 
       # Cache node_modules
-      - uses: pnpm/actions-setup@v2
+      - uses: actions/setup-node@v3
         with:
-          version: 8
+          node-version: 20
+          cache: 'npm'
       - name: Restore cached npm dependencies
         uses: actions/cache/restore@v3
         with:
           path: |
             node_modules
             ~/.cache/Cypress # needed for the Cypress binary
-          key: npm-dependencies-${{ hashFiles('pnpm-lock.yaml') }}  
-      - run: pnpm install --frozen-lockfile
+          key: npm-dependencies-${{ hashFiles('package-lock.json') }}
+      - run: npm i
       - name: Cache npm dependencies
         uses: actions/cache/save@v3
         with:
           path: |
             node_modules
             ~/.cache/Cypress # needed for the Cypress binary
-          key: npm-dependencies-${{ hashFiles('pnpm-lock.yaml') }}
-      - run: pnpm nx build monorepo
-      - run: pnpm run lint
-      - run: pnpm run test
-      - run: pnpm run storybook:ui:build
-      - run: pnpm run ui:test:ui
-      - run: pnpm run storybook:widgets:build
-      - run: pnpm run widgets:test:ui
+          key: npm-dependencies-${{ hashFiles('package-lock.json') }}
+      - run: npx nx affected -t lint,test,test:ui --parallel=3

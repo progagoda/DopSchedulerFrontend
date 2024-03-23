@@ -7,12 +7,8 @@
     "build": "nx build",
     "test": "nx test",
     "lint": "nx lint",
-    "storybook:widgets": "npx nx run widgets:storybook ",
-    "storybook:ui": "npx nx run ui:storybook ",
-    "storybook:widgets:build": "npx nx run widgets:build-storybook",
-    "storybook:ui:build": "npx nx run ui:build-storybook",
-    "widgets:test:ui": "cd src/widgets && npm run test:ui",
-    "ui:test:ui": "cd src/utils/ui && npm run test:ui"
+    "storybook:widgets": "npx nx run widgets:storybook",
+    "storybook:ui": "npx nx run ui:storybook"
   },
   "private": true,
   "dependencies": {

@@ -1,5 +1,5 @@
 import { AppRoutes } from '@utils/types';
-import { Layout, Menu } from 'antd';
+import { Layout, Menu } from '@utils/ui';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 

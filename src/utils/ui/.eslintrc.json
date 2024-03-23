@@ -4,7 +4,7 @@
     "../../../.eslintrc.base.json",
     "plugin:i18next/recommended"
   ],
-  "ignorePatterns": ["!**/*", "storybook-static"],
+  "ignorePatterns": ["!**/*", "storybook-static", "node_modules"],
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
