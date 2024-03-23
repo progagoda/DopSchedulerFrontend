@@ -13,6 +13,7 @@ export interface NavbarProps {}
 
 export const Navbar=(props: NavbarProps)=> {
   const {t} = useTranslation();
+  const test = 'test';
   const items = Object.values(AppRoutes).map((path) => ({
     key: path,
     label: <Link to={`/${path}`}>{t(path)}</Link>,
@@ -21,6 +22,7 @@ export const Navbar=(props: NavbarProps)=> {
   return (
     <Header style={{ display: 'flex', alignItems: 'center' }} data-testid= 'navbar'>
       <div className="demo-logo"/>
+      asdasd
       <Menu
       theme="dark"
       mode="horizontal"
