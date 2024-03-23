@@ -22,7 +22,6 @@ export const Navbar=(props: NavbarProps)=> {
   return (
     <Header style={{ display: 'flex', alignItems: 'center' }} data-testid= 'navbar'>
       <div className="demo-logo"/>
-      asdasd
       <Menu
       theme="dark"
       mode="horizontal"
