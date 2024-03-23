@@ -2,14 +2,14 @@ import { expect } from '@storybook/jest';
 import type { Meta, StoryObj } from '@storybook/react';
 import { within } from '@storybook/testing-library';
 
-import { Navbar } from './Navbar';
+import { Header } from './Header';
 
-const meta: Meta<typeof Navbar> = {
-  component: Navbar,
-  title: 'Navbar',
+const meta: Meta<typeof Header> = {
+  component: Header,
+  title: 'Header',
 };
 export default meta;
-type Story = StoryObj<typeof Navbar>;
+type Story = StoryObj<typeof Header>;
 
 export const Primary = {
   args: {},
@@ -19,6 +19,6 @@ export const Heading: Story = {
   args: {},
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    expect(canvas.getByText(/Welcome to Navbar!/gi)).toBeTruthy();
+    expect(canvas.getByText(/Welcome to Header!/gi)).toBeTruthy();
   },
 };

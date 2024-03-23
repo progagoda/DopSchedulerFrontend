@@ -89,6 +89,7 @@
     "nx": "18.0.0",
     "prettier": "^2.6.2",
     "react-refresh": "^0.10.0",
+    "reg-cli": "^0.18.1",
     "storybook": "7.6.17",
     "ts-jest": "^29.1.0",
     "ts-node": "10.9.1",
