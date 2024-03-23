@@ -43,6 +43,5 @@ jobs:
             node_modules
             ~/.cache/Cypress # needed for the Cypress binary
           key: npm-dependencies-${{ hashFiles('package-lock.json') }}
-      - if: github.ref != 'refs/heads/main'
       - run: git rev-parse --verify main || git remote set-branches origin main && git fetch --depth 1 origin main && git branch main origin/main
       - run: npx nx affected -t lint,test,test:ui --base=main --head=HEAD --parallel=3
