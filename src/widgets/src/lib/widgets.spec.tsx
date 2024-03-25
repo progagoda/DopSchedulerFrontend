@@ -1,5 +1,6 @@
 import { screen } from '@testing-library/react';
 import {renderWithTranslation} from '@utils/helpers'
+import _ from 'lodash'
 
 import {Header, LangSwitcher, Shell} from './widgets';
 

@@ -23,7 +23,7 @@ export const Shell=(props: ShellProps)=> {
   }
   const items = Object.values(AppRoutes).map((path) => ({
     key: path,
-    label: <Link to={`/${path}`}>{t(path)}</Link>,
+    label: <Link to={`/${path}`}>{t(`routes.${path}`)}</Link>,
     icon: icons[path]
   }));
 

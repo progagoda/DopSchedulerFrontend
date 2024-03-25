@@ -1,6 +1,11 @@
 {
     "testExample": "Test Example",
-    "main": "main",
-    "shell": "shell",
-    "app": "default"
+    "routes": {
+        "main": "main",
+        "shell": "shell",
+        "app": "default"
+    },
+    "shell": {
+      "login": "Login"
+    }
 }

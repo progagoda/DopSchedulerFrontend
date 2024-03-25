@@ -1,10 +1,10 @@
 import { render } from '@testing-library/react';
 
-import {Header} from './Header';
+import {Modal} from './Modal';
 
-describe('Header', () => {
+describe('Modal', () => {
   it('should render successfully', () => {
-    const { baseElement } = render(<Header />);
+    const { baseElement } = render(<Modal />);
     expect(baseElement).toBeTruthy();
   });
 });
