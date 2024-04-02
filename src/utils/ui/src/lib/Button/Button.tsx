@@ -1,15 +1,18 @@
 /* eslint-disable @typescript-eslint/no-empty-interface */
 import { Button as AntButton } from 'antd';
-import { ButtonProps } from 'antd/lib/button'
+import styled from 'styled-components';
+
+import { backgroundColor, borderColor, hoverBackgroundColor, textColor } from '../Colors';
 
 
-export interface Button extends ButtonProps{
-}
+export const Button = styled(AntButton)`
+ background: ${backgroundColor};
+ color: ${textColor};
+ border: 1px solid ${borderColor};
 
-export const Button = (props: Button) => {
-  return (
-    <AntButton color=''{...props}>{props.children}</AntButton>
-  );
-}
-
-export default Button;
+ &.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover{
+  background: ${hoverBackgroundColor};
+  border: 1px solid ${borderColor};
+  color: ${textColor}
+  }
+`

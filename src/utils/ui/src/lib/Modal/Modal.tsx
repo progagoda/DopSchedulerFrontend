@@ -1,15 +1,14 @@
 import {Modal as AntModal} from 'antd'
-import { ModalProps } from 'antd/lib/modal'
-/* eslint-disable-next-line */
-export interface Modal extends ModalProps {}
+import styled from 'styled-components';
+
+import { backgroundColor, textColor } from '../Colors';
 
 
-export const Modal = (props: Modal) => {
-
-  return (
-    <AntModal
-    {...props}>
-      {props.children}
-    </AntModal>
-  );
-}
+export const Modal = styled(AntModal)`
+  &.ant-modal-root {
+    background-color: ${backgroundColor};
+    &.ant-modal-body{
+      color: ${textColor};
+    }
+  }
+`

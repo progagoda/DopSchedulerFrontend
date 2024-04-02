@@ -1,6 +1,5 @@
 import { screen } from '@testing-library/react';
 import {renderWithTranslation} from '@utils/helpers'
-import _ from 'lodash'
 
 import {Header, LangSwitcher, Shell} from './widgets';
 
@@ -17,7 +16,7 @@ describe('Render Widgets', () => {
   });
 
   it('Header render successfully', () => {
-    renderWithTranslation(<Header/>)
+    renderWithTranslation(<Header switchTheme={()=> undefined}/>)
     expect(screen.queryByTestId('header')).toBeDefined();
   });
 });

@@ -1,39 +1,46 @@
 import '@utils/i18n'
 
-import { ConfigProvider, Layout, Typography } from '@utils/ui';
+import {Auth} from '@pages/auth';
+import {Layout, Typography } from '@utils/ui';
 import {Header,Shell} from '@widgets';
-import { Suspense } from 'react';
+import { Suspense, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 
-import {AppRouter, darkTheme} from './providers';
+import {AppRouter} from './providers';
+import { StoreProvider } from './providers/StoreProvider';
 
 const Component = ()=>{
   const {t} = useTranslation();
   
-return (<Typography>
+return (<Typography >
   {t('testExample')}
 </Typography>)
 }
 export const App = () => {
+const [isAuth, setIsAuth] = useState(true);
+const [isLightTheme, setLightTheme] = useState(false);
 
 return (
-  <BrowserRouter>
-    <ConfigProvider
-    theme={darkTheme} 
-  >
-      <Suspense fallback="Loading...">
-        <Header/>
-        <Layout style={{ minHeight: '100vh' }}>
-          <Shell/>
-          <Layout>
-            <Component/>
-          </Layout>
-        </Layout>
-        <AppRouter />
-      </Suspense>
-    </ConfigProvider>
-  </BrowserRouter>
+  <StoreProvider>
+    <ThemeProvider theme={{mode: isLightTheme ? 'light': 'dark'}}>
+      <BrowserRouter>
+        {isAuth ?
+          <Suspense fallback="Loading...">
+            <Header switchTheme={ ()=> setLightTheme(!isLightTheme)}/>
+            <Layout style={{ height: '92vh' }}>
+              <Shell/>
+              <Layout>
+                <Component/>
+                <AppRouter />
+              </Layout>
+            </Layout>
+          </Suspense>
+      : <Auth setIsAuth={()=>setIsAuth(true)}/>}
+      </BrowserRouter>
+    </ThemeProvider>
+  </StoreProvider>
 );
 }
 
