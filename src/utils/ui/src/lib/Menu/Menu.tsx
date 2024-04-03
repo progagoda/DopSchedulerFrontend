@@ -19,7 +19,9 @@ export const Menu = styled(AntMenu)`
 }
 &.ant-menu-light:not(.ant-menu-horizontal) .ant-menu-item:not(.ant-menu-item-selected):hover{
   background: ${hoverBackgroundColor};
-  border: 1px solid ${borderColor};
   color: ${textColor};
+}
+&.ant-menu-active{
+  border: 1px solid ${hoverBackgroundColor};
 }
 `
