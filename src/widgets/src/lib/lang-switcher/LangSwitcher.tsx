@@ -1,5 +1,5 @@
-import { Button } from 'src/shared/ui/src';
 import { useTranslation } from 'react-i18next';
+import { Button } from 'src/shared/ui/src';
 
 /* eslint-disable-next-line */
 export interface LangSwitcherProps {}
