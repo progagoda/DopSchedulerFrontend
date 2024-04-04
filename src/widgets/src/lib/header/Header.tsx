@@ -1,7 +1,7 @@
-import { antIcons,Button, Header as UIHeader,Modal, Switch } from '@utils/ui';
 import {useState} from "react";
 import { createPortal } from 'react-dom';
 import { useTranslation } from 'react-i18next';
+import { antIcons,Button, Header as UIHeader,Modal, Switch } from 'src/shared/ui/src';
 
 import { LangSwitcher } from '../widgets';
 import { StyledFlexButton, StyledLogo } from './styles';

@@ -1,17 +1,17 @@
 {
-  "name": "i18n",
+  "name": "configs",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "utils/i18n/src",
+  "sourceRoot": "utils/helpers/src",
   "projectType": "library",
   "targets": {
     "build": {
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/utils/i18n",
-        "main": "utils/i18n/src/index.ts",
-        "tsConfig": "utils/i18n/tsconfig.lib.json",
-        "assets": ["utils/i18n/*.md"]
+        "outputPath": "dist/utils/helpers",
+        "main": "utils/helpers/src/index.ts",
+        "tsConfig": "utils/helpers/tsconfig.lib.json",
+        "assets": ["utils/helpers/*.md"]
       }
     }
   },

@@ -1,5 +1,5 @@
 {
-  "name": "@utils/helpers",
+  "name": "@shared/configs",
   "version": "0.0.1",
   "dependencies": {
     "react": "18.2.0",

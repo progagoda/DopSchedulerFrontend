@@ -1,14 +1,14 @@
 import { Main } from '@pages/main';
 import { Shell } from '@pages/shell';
-import { AppRoutes, TRouterConfig } from '@utils/types';
+import { routerConfig } from '@shared/configs';
 import { App } from 'antd';
 import { Route, Routes } from 'react-router-dom';
 import { v4 as uuid } from 'uuid'
 
-import { RouterPath } from './routerConfig';
+const {AppRoutes, RouterPath} = routerConfig;
 export const AppRouter = () => {
   
-  const routerConfig: TRouterConfig = {
+  const routerConfig: routerConfig.TRouterConfig = {
     [AppRoutes.MAIN]: {
       path: RouterPath.main,
       element: <Main />,

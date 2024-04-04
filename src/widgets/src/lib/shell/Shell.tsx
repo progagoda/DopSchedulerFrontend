@@ -1,8 +1,8 @@
-import { AppRoutes } from '@utils/types';
-import { antIcons,Menu, Sider } from '@utils/ui';
+import { routerConfig } from '@shared/configs';
 import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { antIcons,Menu, Sider } from 'src/shared/ui/src';
 
 /* eslint-disable-next-line */
 export interface ShellProps {}
@@ -11,6 +11,8 @@ export interface ShellProps {}
 export const Shell=(props: ShellProps)=> {
   const {t} = useTranslation();
   const {DesktopOutlined,TeamOutlined,UserOutlined} = antIcons;
+  type AppRoutes = routerConfig.AppRoutes
+  const {AppRoutes} = routerConfig
   const icons: Record<AppRoutes, ReactNode> = {
     [AppRoutes.MAIN]: <DesktopOutlined/>,
     [AppRoutes.DEFAULT]: <TeamOutlined/>,

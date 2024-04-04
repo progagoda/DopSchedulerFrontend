@@ -1,4 +1,4 @@
-import {Button,Flex, Layout} from '@utils/ui';
+import {Button,Flex, Layout} from 'src/shared/ui/src';
 
 import { StyledLogo } from './styles';
 /* eslint-disable-next-line */

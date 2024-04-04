@@ -1,7 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import {render} from '@testing-library/react'
-import {i18n} from '@utils/i18n';
 import React, {ReactNode } from "react";
 import { I18nextProvider } from 'react-i18next';
+
+import * as i18n from './i18n';
 
 export function renderWithTranslation(component: ReactNode ){
     return render(

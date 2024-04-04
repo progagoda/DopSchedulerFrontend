@@ -1,5 +1,5 @@
+import {renderWithTranslation} from '@shared/configs';
 import { screen } from '@testing-library/react';
-import {renderWithTranslation} from '@utils/helpers'
 
 import LangSwitcher from './LangSwitcher';
 describe('LangSwitcher', () => {

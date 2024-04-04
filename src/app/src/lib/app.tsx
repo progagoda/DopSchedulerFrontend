@@ -1,11 +1,11 @@
-import '@utils/i18n'
-
 import {Auth} from '@pages/auth';
-import {Layout, Typography } from '@utils/ui';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import {i18nConfig} from '@shared/configs'
 import {Header,Shell} from '@widgets';
 import { Suspense, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BrowserRouter } from 'react-router-dom';
+import {Layout, Typography } from 'src/shared/ui/src';
 import { ThemeProvider } from 'styled-components';
 
 import {AppRouter} from './providers';

@@ -1,4 +1,4 @@
-import { Flex, Logo } from '@utils/ui'
+import { Flex, Logo } from 'src/shared/ui/src'
 import styled from 'styled-components';
 
 export const StyledFlexButton = styled(Flex)`

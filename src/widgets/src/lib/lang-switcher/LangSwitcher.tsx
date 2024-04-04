@@ -1,4 +1,4 @@
-import { Button } from '@utils/ui';
+import { Button } from 'src/shared/ui/src';
 import { useTranslation } from 'react-i18next';
 
 /* eslint-disable-next-line */

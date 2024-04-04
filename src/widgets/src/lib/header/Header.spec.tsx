@@ -1,8 +1,7 @@
+import { renderWithTranslation } from '@shared/configs';
 import { fireEvent, screen, waitFor } from '@testing-library/react';
-import { renderWithTranslation } from '@utils/helpers';
 
 import {Header} from './Header';
-
 describe('Header', () => {
   const mockSwitchTheme = jest.fn();
   it('should render successfully', () => {

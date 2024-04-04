@@ -1,4 +1,4 @@
-import { Logo } from "@utils/ui";
+import { Logo } from "src/shared/ui/src";
 import styled from "styled-components";
 
 
