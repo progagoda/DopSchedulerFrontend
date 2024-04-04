@@ -26,7 +26,7 @@ return (
     <StyledLogo>{logoText}</StyledLogo>
     <StyledFlexButton>
       <LangSwitcher/>
-      <Switch defaultChecked checkedChildren={<MoonOutlined />} unCheckedChildren={<SunOutlined />}onClick={props.switchTheme}></Switch>
+      <Switch data-testid ={'theme-switcher'}defaultChecked checkedChildren={<MoonOutlined />} unCheckedChildren={<SunOutlined />}onClick={props.switchTheme}></Switch>
       <Button onClick={handleOpenModal}>{t('shell.login')}</Button>
       {createPortal(
         <Modal 
