@@ -3,16 +3,18 @@ import theme from 'styled-theming';
 
 export const Colors = {
     light:{
-        primary: generate('#F6F6F6')[5],
+        primary: generate('#EFEFF3')[5],
         secondary: generate('#F3F3F3')[6],
         bordered: generate('#EBEBEB')[5],
-        text: generate('#000000')[5]    
+        text: generate('#000000')[5],
+        textWarning: '#d74848'    
     },
     dark: {
         primary: generate('#000000')[5],
         secondary: generate('#1F2023')[5],
         bordered: generate('#26272C')[5],
-        text:  generate('#ffffff')[5]
+        text:  generate('#ffffff')[5],
+        textWarning: '#ff0000'
     }
  }
 
@@ -38,4 +40,9 @@ export const borderColor = theme('mode', {
   export const hoverTextColor = theme('mode', {
     light: Colors.light.primary,
     dark: Colors.dark.primary,
+  });
+
+  export const warningTextColor = theme('mode', {
+    light: Colors.light.textWarning,
+    dark: Colors.dark.textWarning,
   });

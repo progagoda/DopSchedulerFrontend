@@ -1,18 +1,17 @@
-import {Button,Flex, Layout} from 'src/shared/ui/src';
+import { LoginForm } from '@features';
+import {Flex, Layout} from '@shared/ui';
 
 import { StyledLogo } from './styles';
 /* eslint-disable-next-line */
 export interface AuthProps {
-  setIsAuth: ()=>void;
 }
-
 
 export function Auth(props: AuthProps) {
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Flex vertical flex = {1} justify='center' align='center'>
+      <Flex vertical flex = {1} justify='center' align='center' gap={'10px'}>
         <StyledLogo>DOP SHEDULER</StyledLogo>
-        <Button onClick={props.setIsAuth}>Login</Button>
+        <LoginForm/>
       </Flex>
     </Layout>
   );

@@ -1,9 +1,9 @@
 import {Typography as AntTypography} from 'antd';
 import styled from 'styled-components';
 
-import { textColor } from '../Colors';
+import { textColor, warningTextColor } from '../Colors';
 
 
-export const Typography = styled(AntTypography)`
-color: ${textColor}
+export const Typography = styled(AntTypography)<{textWarning?: boolean}>`
+color: ${props=> props.textWarning ? warningTextColor : textColor}
 `

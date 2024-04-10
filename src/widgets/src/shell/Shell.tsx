@@ -4,30 +4,30 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { antIcons,Menu, Sider } from 'src/shared/ui/src';
 
+const {AppRoutes} = routerConfig
+const {DesktopOutlined,UserOutlined} = antIcons;
+type AppRoutes = routerConfig.AppRoutes
 /* eslint-disable-next-line */
-export interface ShellProps {}
-
+interface ShellProps {}
 
 export const Shell=(props: ShellProps)=> {
   const {t} = useTranslation();
-  const {DesktopOutlined,TeamOutlined,UserOutlined} = antIcons;
-  type AppRoutes = routerConfig.AppRoutes
-  const {AppRoutes} = routerConfig
-  const icons: Record<AppRoutes, ReactNode> = {
+  
+  const icons:Record<AppRoutes, ReactNode>= {
     [AppRoutes.MAIN]: <DesktopOutlined/>,
-    [AppRoutes.DEFAULT]: <TeamOutlined/>,
-    [AppRoutes.SHELL]: <UserOutlined/>
+    [AppRoutes.SHELL]: <UserOutlined/>,
   }
+
   const items = Object.values(AppRoutes).map((path) => ({
     key: path,
-    label: <Link to={`/${path}`}>{t(`routes.${path}`)}</Link>,
+    label: <Link to={`/app/${path}`}>{t(`routes.${path}`)}</Link>,
     icon: icons[path]
   }));
 
   return (
     <Sider data-testid= 'shell'>
       <div className="demo-logo-vertical" />
-      <Menu defaultSelectedKeys={['1']} mode="inline" items={items} />
+      <Menu defaultSelectedKeys={['main']} mode="inline" items={items} />
     </Sider>
   );
 }

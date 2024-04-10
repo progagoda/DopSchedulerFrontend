@@ -15,4 +15,10 @@ export const Button = styled(AntButton)`
   border: 1px solid ${borderColor};
   color: ${textColor}
   }
+
+&.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
+    background: ${hoverBackgroundColor};
+    border: 1px solid ${borderColor};
+    color: ${textColor}
+    }
 `

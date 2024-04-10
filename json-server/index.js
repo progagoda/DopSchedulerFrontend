@@ -1,4 +1,5 @@
 const fs = require('fs');
+const _ = require('lodash');
 const jsonServer = require('json-server');
 const path = require('path');
 
@@ -24,12 +25,12 @@ server.post('/login', (req, res) => {
         const db = JSON.parse(fs.readFileSync(path.resolve(__dirname, 'db.json'), 'UTF-8'));
         const { users = [] } = db;
 
-        const userFromBd = users.find(
+        const userFromDB = users.find(
             (user) => user.username === username && user.password === password,
         );
 
-        if (userFromBd) {
-            return res.json(userFromBd);
+        if (userFromDB) {
+            return res.json({...userFromDB, token: _.random(1000)});
         }
 
         return res.status(403).json({ message: 'User not found' });
@@ -38,6 +39,7 @@ server.post('/login', (req, res) => {
         return res.status(500).json({ message: e.message });
     }
 });
+
 
 // проверяем, авторизован ли пользователь
 // eslint-disable-next-line

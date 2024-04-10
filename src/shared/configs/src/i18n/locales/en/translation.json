@@ -6,6 +6,19 @@
         "app": "default"
     },
     "shell": {
-      "login": "Login"
-    }
-}
+      "logout":"Logout"
+    },
+    "header": {
+      "logout": "Logout"
+   },
+    "auth":{
+      "messages":{
+        "requiredUsername": "Username is required",
+        "requiredPassword": "Password is required",
+        "error": "Failed authorization. Correct your login or password"
+      },
+        "buttons":{
+          "login": "Login"
+        }
+      }
+   }

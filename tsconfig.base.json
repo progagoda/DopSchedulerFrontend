@@ -17,6 +17,8 @@
     "paths": {
       "@app": ["src/app/src/index.ts"],
       "@app/providers/router": ["app/providers/router/src/index.ts"],
+      "@entities": ["src/entities/src/index.ts"],
+      "@features": ["src/features/src/index.ts"],
       "@pages/auth": ["src/pages/auth/src/index.ts"],
       "@pages/main": ["src/pages/main/src/index.ts"],
       "@pages/shell": ["src/pages/shell/src/index.ts"],

@@ -18,8 +18,17 @@
               },
               {
                 "sourceTag": "widgets",
-                "bannedExternalImports": ["antd"]
+                "bannedExternalImports": ["antd", "features", "app"]
+              },
+              {
+                "sourceTag": "features",
+                "bannedExternalImports": ["antd", "widgets", "app"]
+              },
+              {
+                "sourceTag": "ui",
+                "onlyDependOnLibsWithTags": ["antd"]
               }
+
             ]
           }
         ]
