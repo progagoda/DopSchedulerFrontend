@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter } from 'react-router-dom';
 
-import Main from './main';
+import CreateLesson from './createLesson';
 
-describe('Main', () => {
+describe('CreateLesson', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
       <BrowserRouter>
-        <Main />
+        <CreateLesson />
       </BrowserRouter>);
     expect(baseElement).toBeTruthy();
   });

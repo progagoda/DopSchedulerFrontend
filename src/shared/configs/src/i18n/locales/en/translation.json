@@ -1,9 +1,8 @@
 {
     "testExample": "Test Example",
     "routes": {
-        "main": "main",
-        "shell": "shell",
-        "app": "default"
+        "schedule": "Schedule",
+        "create": "Create lesson"
     },
     "shell": {
       "logout":"Logout"

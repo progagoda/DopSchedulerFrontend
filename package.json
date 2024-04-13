@@ -17,6 +17,7 @@
     "@ant-design/colors": "^7.0.2",
     "@reduxjs/toolkit": "^2.2.3",
     "@types/antd": "^1.0.0",
+    "dayjs": "^1.11.10",
     "i18next": "^23.8.2",
     "i18next-browser-languagedetector": "^7.2.0",
     "i18next-http-backend": "^2.4.3",

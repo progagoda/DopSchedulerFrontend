@@ -1,8 +1,0 @@
-{
-  "name": "pages-shell",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "pages/shell/src",
-  "projectType": "library",
-  "tags": [],
-  "targets": {}
-}

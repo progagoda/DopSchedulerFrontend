@@ -1,15 +1,15 @@
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom'
 
-import Shell from './shell';
+import Schedule from './schedule';
 
-describe('Shell', () => {
+describe('Main', () => {
   it('should render successfully', () => {
     const { baseElement } = render(
       <BrowserRouter>
-        <Shell />
+        <Schedule />
       </BrowserRouter>
-    );
+      );
     expect(baseElement).toBeTruthy();
   });
 });

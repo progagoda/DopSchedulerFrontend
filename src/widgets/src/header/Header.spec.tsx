@@ -5,7 +5,8 @@ import { fireEvent, screen, waitFor } from '@testing-library/react';
 
 import {Header} from './Header';
 const {storeProvider} = providersConfig
-const {StoreProvider} =storeProvider
+const {StoreProvider} = storeProvider
+
 describe('Header', () => {
   const mockSwitchTheme = jest.fn();
 

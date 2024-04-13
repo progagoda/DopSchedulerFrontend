@@ -4,5 +4,5 @@ import styled from "styled-components";
 import { backgroundColor } from "../Colors";
 
 export const Layout = styled(AntLayout)`
-background: ${backgroundColor}
+background: ${backgroundColor};
 `

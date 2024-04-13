@@ -1,0 +1,8 @@
+{
+  "name": "schedule",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src/pages/schedule/src",
+  "projectType": "library",
+  "tags": ["pages"],
+  "targets": {}
+}
