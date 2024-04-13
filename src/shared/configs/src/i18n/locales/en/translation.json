@@ -1,0 +1,23 @@
+{
+    "testExample": "Test Example",
+    "routes": {
+        "schedule": "Schedule",
+        "create": "Create lesson"
+    },
+    "shell": {
+      "logout":"Logout"
+    },
+    "header": {
+      "logout": "Logout"
+   },
+    "auth":{
+      "messages":{
+        "requiredUsername": "Username is required",
+        "requiredPassword": "Password is required",
+        "error": "Failed authorization. Correct your login or password"
+      },
+        "buttons":{
+          "login": "Login"
+        }
+      }
+   }

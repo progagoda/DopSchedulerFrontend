@@ -1,0 +1,20 @@
+{
+    "testExample": "Тестовый  пример",
+    "routes": {
+        "schedule": "Расписание",
+        "create": "Cоздать доп"
+    },
+    "header": {
+       "logout": "Выход"
+    },
+    "auth":{
+        "messages":{
+          "requiredUsername": "Введите логин пользователя",
+          "requiredPassword": "Введите пароль",
+          "error": "Ошибка авторизации. Проверьте ваш логин и пароль"
+        },
+        "buttons":{
+            "login": "Войти"
+        }
+    }
+}

@@ -15,7 +15,20 @@
               {
                 "sourceTag": "*",
                 "onlyDependOnLibsWithTags": ["*"]
+              },
+              {
+                "sourceTag": "widgets",
+                "bannedExternalImports": ["antd", "features", "app"]
+              },
+              {
+                "sourceTag": "features",
+                "bannedExternalImports": ["antd", "widgets", "app"]
+              },
+              {
+                "sourceTag": "ui",
+                "onlyDependOnLibsWithTags": ["antd"]
               }
+
             ]
           }
         ]
@@ -28,7 +41,8 @@
       "rules": {
         "react/jsx-indent": ["error", 2],
         "simple-import-sort/imports": "error",
-        "simple-import-sort/exports": "error"
+        "simple-import-sort/exports": "error",
+        "newline-before-return": "error"
       },
       "parserOptions": {
         "sourceType": "module",

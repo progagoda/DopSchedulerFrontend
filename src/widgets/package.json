@@ -4,7 +4,12 @@
   "description": "This library was generated with [Nx](https://nx.dev).",
   "main": "index.js",
   "scripts": {
-    "test:ui": "npx nx run widgets:build-storybook && npx loki --requireRefence --reactUri file:./storybook-static"
+    "visual:report": "npm-run-all visual:report:*",
+    "visual:report:json": "node scripts/generate-visual-json-report.js",
+    "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+    "test:ui": "npx nx run widgets:build-storybook && npx loki --requireRefence --reactUri file:./storybook-static",
+    "test:ui:report": "npm run visual:report:json && npm run visual:report:html",
+    "approve:ui": "npx loki approve"
   },
   "keywords": [],
   "author": "",

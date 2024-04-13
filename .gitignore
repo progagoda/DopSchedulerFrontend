@@ -39,5 +39,6 @@ testem.log
 Thumbs.db
 
 .nx/cache
-
 storybook-static
+./src/widgets/.loki/report.html
+./src/widgets/.loki/report.json

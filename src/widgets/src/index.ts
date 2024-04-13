@@ -1,1 +1,3 @@
-export * from './lib/widgets';
+export * from "./header"
+export * from "./lang-switcher"
+export * from "./shell"
