@@ -45,6 +45,6 @@ module.exports = {
       outputHashing: process.env['NODE_ENV'] === 'production' ? 'all' : 'none',
       optimization: process.env['NODE_ENV'] === 'production',
     }),
-    new BundleAnalyzerPlugin(),
+    // new BundleAnalyzerPlugin(),
   ],
 };
