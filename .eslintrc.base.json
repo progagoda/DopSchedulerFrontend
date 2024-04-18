@@ -27,8 +27,11 @@
               {
                 "sourceTag": "ui",
                 "onlyDependOnLibsWithTags": ["antd"]
+              },
+              {
+                "sourceTag": "entities",
+                "bannedExternalImports": ["antd", "widgets", "app", "features"]
               }
-
             ]
           }
         ]

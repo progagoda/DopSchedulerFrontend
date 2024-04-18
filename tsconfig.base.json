@@ -19,6 +19,7 @@
       "@app/providers/router": ["app/providers/router/src/index.ts"],
       "@entities": ["src/entities/src/index.ts"],
       "@features": ["src/features/src/index.ts"],
+      "@pages/day": ["src/pages/day/src/index.ts"],
       "@pages/auth": ["src/pages/auth/src/index.ts"],
       "@pages/create-lesson": ["src/pages/create-lesson/src/index.ts"],
       "@pages/schedule": ["src/pages/schedule/src/index.ts"],

@@ -10,6 +10,11 @@
     "header": {
       "logout": "Logout"
    },
+   "lessonCard":{
+     "group": "Group: {{group}}",
+     "time": "Time: {{startTime}}-{{endTime}}",
+     "place": "Place: {{place}}"
+   },
     "auth":{
       "messages":{
         "requiredUsername": "Username is required",
