@@ -14,6 +14,8 @@ describe('App', () => {
       },
     },
     loginFormApi: undefined,
+    calendarApi: undefined,
+    day: {},
     }
     const renderApp = ()=>(
       <BrowserRouter>

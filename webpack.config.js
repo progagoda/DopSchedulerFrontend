@@ -2,6 +2,7 @@ const { NxWebpackPlugin } = require('@nx/webpack');
 
 const { join } = require('path');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 module.exports = {
   output: {
     path: join(__dirname, './dist/monorepo'),
@@ -44,6 +45,6 @@ module.exports = {
       outputHashing: process.env['NODE_ENV'] === 'production' ? 'all' : 'none',
       optimization: process.env['NODE_ENV'] === 'production',
     }),
-    new BundleAnalyzerPlugin()
+    // new BundleAnalyzerPlugin(),
   ],
 };

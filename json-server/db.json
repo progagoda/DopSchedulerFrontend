@@ -3,6 +3,82 @@
       { "id": "1", "title": "a title", "views": 100 },
       { "id": "2", "title": "another title", "views": 200 }
     ],
+    "lessons":[
+      {
+        "id":1, 
+        "lessons":[
+          {
+          "id":1,
+          "preview": "OPD P34131",
+          "day": {
+              "date": "2024-5-5",
+              "startTime": "17:00",
+              "endTime": "18:30"
+          },
+          "info": {
+              "subject": "OPD",
+              "group": "P34131"
+          },
+          "place":{
+              "location": "Кронверский"
+          }
+          },
+          {
+            "id": 2,
+            "preview": "PVS P34131",
+            "day": {
+                "date": "2024-5-25",
+                "startTime": "17:00",
+                "endTime": "18:30"
+            },
+            "info": {
+                "subject": "PVS",
+                "group": "P34131"
+            },
+            "place":{
+                "zoomLink": "http://zoom/12312"
+            }
+          }
+        ]
+      },
+      {
+        "id":2, 
+        "lessons":[
+          {
+          "id":1,
+          "preview": "PVS P3113",
+          "day": {
+              "date": "2024-4-5",
+              "startTime": "17:00",
+              "endTime": "18:30"
+          },
+          "info": {
+              "subject": "PVS",
+              "group": "P3113"
+          },
+          "place":{
+              "location": "Кронверский"
+          }
+          },
+          {
+            "id": 2,
+            "preview": "SOFT P3112",
+            "day": {
+                "date": "2024-4-6",
+                "startTime": "17:00",
+                "endTime": "18:30"
+            },
+            "info": {
+                "subject": "SOFT",
+                "group": "P3112"
+            },
+            "place":{
+                "zoomLink": "http://zoom/12312"
+            }
+          }
+        ]
+      }
+    ],
     "comments": [
       { "id": "1", "text": "a comment about post 1", "postId": "1" },
       { "id": "2", "text": "another comment about post 1", "postId": "1" }
@@ -15,6 +91,11 @@
           "id": 1,
           "username": "admin",
           "password": "123"
+        },
+        {
+          "id": 2,
+          "username": "test",
+          "password": "test"
         }
       ],
     "login": [{"test":"1"}]

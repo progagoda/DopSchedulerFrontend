@@ -3,17 +3,6 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "src/entities/src",
   "projectType": "library",
-  "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/src/entities",
-        "main": "src/entities/src/index.ts",
-        "tsConfig": "src/entities/tsconfig.lib.json",
-        "assets": ["src/entities/*.md"]
-      }
-    }
-  },
+  "targets": {},
   "tags": ["entities"]
 }

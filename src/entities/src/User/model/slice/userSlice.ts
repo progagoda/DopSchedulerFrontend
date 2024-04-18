@@ -1,12 +1,12 @@
 import { createSlice,PayloadAction } from '@reduxjs/toolkit'
-import { consts } from '@shared/configs';
+import {consts} from '@shared/configs'
 
 import { TUser, TUserScheme } from '../types/user';
 
-
+const {localStorageConst} = consts;
 const initialState: TUserScheme = {
 }
-const {localStorageConst} = consts;
+
 export const userSlice = createSlice({
   name: 'user',
   initialState,

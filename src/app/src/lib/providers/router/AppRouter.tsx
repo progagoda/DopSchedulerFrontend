@@ -1,4 +1,6 @@
 import {CreateLesson} from '@pages/create-lesson'
+// eslint-disable-next-line @nx/enforce-module-boundaries
+import {Day} from '@pages/day';
 import { Schedule } from '@pages/schedule';
 import { routerConfig } from '@shared/configs';
 import { Route, Routes } from 'react-router-dom';
@@ -15,6 +17,10 @@ export const AppRouter = () => {
     [AppRoutes.CREATE]: {
       path: RouterPath.create,
       element: <CreateLesson />,
+    },
+    [AppRoutes.DAY]: {
+      path: RouterPath.day,
+      element: <Day/>,
     },
   };
 

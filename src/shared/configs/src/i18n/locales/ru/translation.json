@@ -7,6 +7,11 @@
     "header": {
        "logout": "Выход"
     },
+    "lessonCard":{
+        "group": "Группа: {{group}}",
+        "time": "Время: {{startTime}}-{{endTime}}",
+        "place": "Место: {{place}}"
+      },
     "auth":{
         "messages":{
           "requiredUsername": "Введите логин пользователя",

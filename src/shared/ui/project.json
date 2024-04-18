@@ -1,7 +1,7 @@
 {
   "name": "ui",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "utils/ui/src",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src/shared/ui/src",
   "projectType": "library",
   "tags": ["ui"],
   "targets": {}

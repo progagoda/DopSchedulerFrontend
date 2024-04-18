@@ -1,19 +1,9 @@
 {
   "name": "configs",
-  "$schema": "../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "utils/helpers/src",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "src/shared/configs",
   "projectType": "library",
   "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/utils/helpers",
-        "main": "utils/helpers/src/index.ts",
-        "tsConfig": "utils/helpers/tsconfig.lib.json",
-        "assets": ["utils/helpers/*.md"]
-      }
-    }
   },
   "tags": []
 }

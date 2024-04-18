@@ -19,6 +19,8 @@ describe('Header', () => {
       },
     },
     loginFormApi: undefined,
+    calendarApi: undefined,
+    day: {},
     }
 
   const renderHeader = ()=> (

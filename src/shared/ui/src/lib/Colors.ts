@@ -37,6 +37,7 @@ export const borderColor = theme('mode', {
     light: Colors.light.secondary,
     dark: Colors.dark.secondary,
   });
+  
   export const hoverTextColor = theme('mode', {
     light: Colors.light.primary,
     dark: Colors.dark.primary,

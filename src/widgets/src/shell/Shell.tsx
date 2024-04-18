@@ -1,4 +1,5 @@
 import { routerConfig } from '@shared/configs';
+import _ from 'lodash';
 import { ReactNode } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
@@ -8,18 +9,19 @@ const {AppRoutes} = routerConfig
 const {CalendarOutlined, PlusOutlined} = antIcons;
 
 type AppRoutes = routerConfig.AppRoutes
+type TShellRoutes = Exclude<AppRoutes, "day">
 /* eslint-disable-next-line */
 interface ShellProps {}
 
 export const Shell=(props: ShellProps)=> {
   const {t} = useTranslation();
+  const shellRoutes = _.without(Object.values(AppRoutes),AppRoutes.DAY) as TShellRoutes[]
   
-  const icons:Record<AppRoutes, ReactNode>= {
+  const icons:Record<TShellRoutes, ReactNode>= {
     [AppRoutes.SHEDULE]: <CalendarOutlined />,
     [AppRoutes.CREATE]: <PlusOutlined />,
   }
-
-  const items = Object.values(AppRoutes).map((path) => ({
+  const items = Object.values(shellRoutes).map((path) => ({
     key: path,
     label: <Link to={`/app/${path}`}>{t(`routes.${path}`)}</Link>,
     icon: icons[path]
