@@ -57,16 +57,18 @@ return (
       <Flex flex={1} justify='center' align='center' style={{height:'100vh'}}>
         <Spinner size='large'/>
       </Flex>
-      }
-    >
+    }
+  >
       <Header switchTheme={()=> setLightTheme(!isLightTheme)}/>
-      <Routes>
-        <Route path={'/auth'} element={<Auth/>} />
-      </Routes>
-      <System/>
+      {savedUser ? 
+        <System/> :
+        <Routes>
+          <Route path={'/auth'} element={<Auth/>} />
+        </Routes>
+    }
     </Suspense>
   </ThemeProvider>
-  )
+)
 }
 export default App;
 
