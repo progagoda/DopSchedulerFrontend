@@ -5,9 +5,9 @@ import type { Dayjs } from 'dayjs';
 import _ from 'lodash';
 import { memo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, } from 'react-router-dom';
 
-import { useLessonsQuery } from '../api';
+import { useAllLessonsQuery } from '../api';
 import { dayActions } from '../model/slice';
 
 /* eslint-disable-next-line */
@@ -15,26 +15,26 @@ export interface MainProps {}
 
 
 const ViewCalendar = memo((props: MainProps) => {
+
   const userId = useSelector(getUserIdSelector);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const {data: lessons, isLoading} = useLessonsQuery({
+
+  const {data: calendarData, isLoading} = useAllLessonsQuery({
     userId: userId || '1',
   }, {skip: !userId})
 
-  const transformDate = (date: Dayjs) => `${date.year()}-${date.month()}-${date.date()}`;
-
   const handleSelect = (newValue: Dayjs)=>{
-    const date = _.reverse(_.split(transformDate(newValue),'-')).join('.');
-    const targetDate = transformDate(newValue);
-    const targetLessons = _.filter(lessons,{day:{date: targetDate}})
+    const date = newValue.format('YYYY-MM-DD')
+    const targetLessons = _.filter(calendarData?.lessons,{day:{date}})
     dispatch(dayActions.setCurrentDay({id:'1', date, lessons: targetLessons}))
-    navigate(routerConfig.RouterPath.day)
+    const url = routerConfig.RouterPath.day.replace(':date','')
+    navigate(url+date)
   }
 
   const getListData = (value: Dayjs) => {
-    const date = transformDate(value);
-    const targetLessons= _.filter(lessons,{day:{date: date}})
+    const date = value.format('YYYY-MM-DD')
+    const targetLessons= _.filter(calendarData?.lessons,{day:{date: date}})
     
     return targetLessons;
   }
@@ -56,8 +56,9 @@ const ViewCalendar = memo((props: MainProps) => {
     if (info.type === 'date') return dateCellRender(current);
     if (info.type === 'month') return null
     
-return info.originNode;
+    return info.originNode;
   };
+
   if (isLoading){
     return (
       <Flex style={{height:"92vh"}} align='center' justify='center'>

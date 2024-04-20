@@ -11,5 +11,5 @@ export type TRouterConfig = Record<AppRoutes, RouteProps>
 export const RouterPath: Record<AppRoutes, string> = {
     [AppRoutes.SHEDULE]: '/app/schedule',
     [AppRoutes.CREATE]: '/app/create',
-    [AppRoutes.DAY]: '/app/schedule/day'
+    [AppRoutes.DAY]: "/app/schedule/day/:date"
 }

@@ -11,7 +11,7 @@
           "id":1,
           "preview": "OPD P34131",
           "day": {
-              "date": "2024-5-5",
+              "date": "2024-04-05",
               "startTime": "17:00",
               "endTime": "18:30"
           },
@@ -27,7 +27,23 @@
             "id": 2,
             "preview": "PVS P34131",
             "day": {
-                "date": "2024-5-25",
+                "date": "2024-04-25",
+                "startTime": "17:00",
+                "endTime": "18:30"
+            },
+            "info": {
+                "subject": "PVS",
+                "group": "P34131"
+            },
+            "place":{
+                "zoomLink": "http://zoom/12312"
+            }
+          },
+          {
+            "id": 3,
+            "preview": "OPD P34133",
+            "day": {
+                "date": "2024-04-25",
                 "startTime": "17:00",
                 "endTime": "18:30"
             },
@@ -48,7 +64,7 @@
           "id":1,
           "preview": "PVS P3113",
           "day": {
-              "date": "2024-4-5",
+              "date": "2024-04-05",
               "startTime": "17:00",
               "endTime": "18:30"
           },
@@ -64,7 +80,87 @@
             "id": 2,
             "preview": "SOFT P3112",
             "day": {
-                "date": "2024-4-6",
+                "date": "2024-04-06",
+                "startTime": "17:00",
+                "endTime": "18:30"
+            },
+            "info": {
+                "subject": "SOFT",
+                "group": "P3112"
+            },
+            "place":{
+                "zoomLink": "http://zoom/12312"
+            }
+          },
+          {
+            "id": 3,
+            "preview": "SOFT P3112",
+            "day": {
+                "date": "2024-04-06",
+                "startTime": "17:00",
+                "endTime": "18:30"
+            },
+            "info": {
+                "subject": "SOFT",
+                "group": "P3112"
+            },
+            "place":{
+                "zoomLink": "http://zoom/12312"
+            }
+          },
+          {
+            "id": 3,
+            "preview": "SOFT P3112",
+            "day": {
+                "date": "2024-04-06",
+                "startTime": "17:00",
+                "endTime": "18:30"
+            },
+            "info": {
+                "subject": "SOFT",
+                "group": "P3112"
+            },
+            "place":{
+                "zoomLink": "http://zoom/12312"
+            }
+          },
+          {
+            "id": 3,
+            "preview": "SOFT P3112",
+            "day": {
+                "date": "2024-04-06",
+                "startTime": "17:00",
+                "endTime": "18:30"
+            },
+            "info": {
+                "subject": "SOFT",
+                "group": "P3112"
+            },
+            "place":{
+                "zoomLink": "http://zoom/12312"
+            }
+          },
+          {
+            "id": 3,
+            "preview": "SOFT P3112",
+            "day": {
+                "date": "2024-04-06",
+                "startTime": "17:00",
+                "endTime": "18:30"
+            },
+            "info": {
+                "subject": "SOFT",
+                "group": "P3112"
+            },
+            "place":{
+                "zoomLink": "http://zoom/12312"
+            }
+          },
+          {
+            "id": 3,
+            "preview": "SOFT P3112",
+            "day": {
+                "date": "2024-04-06",
                 "startTime": "17:00",
                 "endTime": "18:30"
             },

@@ -1,4 +1,3 @@
-// eslint-disable-next-line @nx/enforce-module-boundaries
 import { providersConfig } from '@app';
 import { i18nConfig } from '@shared/configs';
 import { fireEvent, screen, waitFor } from '@testing-library/react';
@@ -21,6 +20,8 @@ describe('Header', () => {
     loginFormApi: undefined,
     calendarApi: undefined,
     day: {},
+    lessonsListApi: undefined,
+    lessonCardApi: undefined,
     }
 
   const renderHeader = ()=> (

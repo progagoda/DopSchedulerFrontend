@@ -3,6 +3,8 @@ import { TLesson } from "@entities";
 import { antIcons,Card, Flex, Title, Typography } from "@shared/ui";
 import { useTranslation } from "react-i18next";
 
+import { useLessonMutation } from "../api";
+
 const {DeleteOutlined} = antIcons;
 
 type TCard = {
@@ -10,8 +12,9 @@ type TCard = {
 }
 export const LessonCard = ({lesson}: TCard) => {
     const {t} = useTranslation('translation', { keyPrefix: 'lessonCard' }); 
+    const [deleteLesson] = useLessonMutation();
     const deleteDay = () => {
-        console.log("🚀 ~ deleteDay ~ id:", lesson.id)
+        deleteLesson({lessonId: lesson.id})
     }
      
     return (

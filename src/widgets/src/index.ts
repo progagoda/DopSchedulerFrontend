@@ -1,3 +1,5 @@
 export * from "./header"
 export * from "./lang-switcher"
-export * from "./shell"
+export * from "./lessons-list"
+export * from './shell'
+

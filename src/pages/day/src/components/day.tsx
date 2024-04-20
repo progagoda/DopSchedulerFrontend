@@ -1,19 +1,21 @@
-import { getDaySelector,LessonCard } from "@features";
-import { Flex, Row, Title } from "@shared/ui";
-import { useSelector } from "react-redux";
+import { Button,Flex, Scrollable, Title } from "@shared/ui";
+import { LessonsList } from "@widgets";
+import { useTranslation} from "react-i18next";
+import { useParams } from "react-router-dom";
 
 export const Day = () => {
-    const day = useSelector(getDaySelector);
+  const params = useParams();
+  const {t} = useTranslation('translation',{ keyPrefix: 'day'})
 
 return (
   <Flex vertical gap={10} flex={1} style={{paddingLeft:'30px'}}>
-    <Title>{day.date}</Title>
-    {day.lessons && day.lessons.map((lesson)=>(
-      <Row>
-        <LessonCard lesson={lesson}/>
-      </Row>
-    ))}
-
+    <Title>{params.date}</Title>
+    <Flex justify="start">
+      <Button size="large">{t('addDopButton')}</Button>
+    </Flex>
+    <Scrollable height={70}>
+      <LessonsList/>
+    </Scrollable>
   </Flex>
-);
+  );
 };

@@ -4,9 +4,15 @@
         "schedule": "Расписание",
         "create": "Cоздать доп"
     },
+    "day":{
+        "addDopButton": "Добавить занятие"
+      },
     "header": {
        "logout": "Выход"
     },
+    "lessonsList":{
+        "emptyList": "Нет занятий"
+      },
     "lessonCard":{
         "group": "Группа: {{group}}",
         "time": "Время: {{startTime}}-{{endTime}}",

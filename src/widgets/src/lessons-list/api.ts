@@ -1,13 +1,13 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { consts } from '@shared/configs'
 
-import { TCalendarSchemeApi, TCalendarSchemeArgs } from './model/types'
+import {  TLessonListSchemeApi,TLessonListSchemeArgs } from './model/types'
 const {localStorageConst} = consts
 
-export const calendarApi = createApi({
-  reducerPath: 'calendarApi',
+export const lessonsListApi = createApi({
+  reducerPath: 'lessonsListApi',
   baseQuery: fetchBaseQuery({ 
-    baseUrl: 'http://localhost:8000',
+    baseUrl: 'http://localhost:8000/lessons',
     prepareHeaders: (headers, { getState }) => {
       const authData = localStorage.getItem(localStorageConst.USER_LOCAL_STORAGE_KEY)
       const token = authData ? JSON.parse(authData).token : null;
@@ -19,12 +19,12 @@ export const calendarApi = createApi({
     },
   }),
   endpoints: (builder) => ({
-    allLessons: builder.query<TCalendarSchemeApi, TCalendarSchemeArgs>({
-      query: ({userId}) => ({
-        url: `/lessons/${userId}`,
+    lessons: builder.query<TLessonListSchemeApi, TLessonListSchemeArgs>({
+      query: ({day}) => ({
+        url: `/${day}`,
       }),
-      transformResponse:(data: TCalendarSchemeApi)=> data
     }),
   }),
 })
-export const { useAllLessonsQuery} = calendarApi
+
+export const { useLazyLessonsQuery } = lessonsListApi;

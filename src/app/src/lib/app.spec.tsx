@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './app';
 import { StoreProvider } from './providers/StoreProvider';
 
+
 describe('App', () => {
   const initialState = {
     user: {
@@ -15,6 +16,8 @@ describe('App', () => {
     },
     loginFormApi: undefined,
     calendarApi: undefined,
+    lessonCardApi: undefined,
+    lessonsListApi: undefined,
     day: {},
     }
     const renderApp = ()=>(

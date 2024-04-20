@@ -10,15 +10,19 @@
           "error",
           {
             "enforceBuildableLibDependency": true,
-            "allow": [],
+            "allow": ["app", "widgets"],
             "depConstraints": [
               {
                 "sourceTag": "*",
                 "onlyDependOnLibsWithTags": ["*"]
               },
               {
+                "sourceTag": "app",
+                "onlyDependOnLibsWithTags": ["*"]
+              },
+              {
                 "sourceTag": "widgets",
-                "bannedExternalImports": ["antd", "features", "app"]
+                "bannedExternalImports": ["antd", "features"]
               },
               {
                 "sourceTag": "features",

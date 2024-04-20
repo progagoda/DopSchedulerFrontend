@@ -4,12 +4,15 @@
         "schedule": "Schedule",
         "create": "Create lesson"
     },
-    "shell": {
-      "logout":"Logout"
+    "day":{
+      "addDopButton": "Add lesson"
     },
     "header": {
       "logout": "Logout"
    },
+   "lessonsList":{
+    "emptyList": "No any lessons"
+  },
    "lessonCard":{
      "group": "Group: {{group}}",
      "time": "Time: {{startTime}}-{{endTime}}",

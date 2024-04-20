@@ -16,9 +16,9 @@ export const Header = (props: HeaderProps) => {
   const {MoonOutlined, SunOutlined} = antIcons
   const logoText = 'DOP SHEDULER'
   const user = useSelector(getUserStateSelector);
-const handleLogout = () =>{
-  dispatch(userActions.logout())
-}
+  const handleLogout = () =>{
+    dispatch(userActions.logout())
+  }
 
 return (
   <UIHeader style={{ height: '7.9vh' }} data-testid='header'>
