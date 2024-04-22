@@ -1,23 +1,19 @@
-import { LessonCard } from "@features";
-import {Empty, Flex, Row, Typography } from "@shared/ui";
-import { useEffect } from "react";
+import { LessonCard, useDeleteLessonMutation } from "@features";
+import {Empty, Flex, Row, Spinner, Typography } from "@shared/ui";
+import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
 
-import { useLazyLessonsQuery } from "./api";
+import { useAllLessonsByDayQuery } from "@features";
+import _ from "lodash";
 
 
-export const LessonsList = () => {
+export const LessonsList = memo(() => {
     const params = useParams();
     const {t} = useTranslation('translation',{keyPrefix: 'lessonsList'})
-    const [getLessons,{data: lessons}] = useLazyLessonsQuery()
-  
-    useEffect(()=>{
-      if(params.date){
-        getLessons({day: params.date})
-      }
-    }, [getLessons, params])
-    if (!lessons){
+    const {data: lessons, isLoading}= useAllLessonsByDayQuery({date: params.date||''})
+    const [deleteLesson, {isLoading: isLoadingDelete}] = useDeleteLessonMutation();
+    if (lessons && _.isEmpty(lessons)){
       return (
         <Flex style={{height:'60vh'}}gap={10} flex={1} justify="center" align="center">
           <Empty
@@ -31,14 +27,18 @@ export const LessonsList = () => {
             />
         </Flex>)
     }
-
+ 
   return (
+    <Flex vertical flex={1}>
+    <Spinner spinning={isLoading|| isLoadingDelete} size="large">
     <Flex vertical gap={10} flex={1}>
-      {lessons.map((lesson)=>(
-        <Row>
-          <LessonCard lesson={lesson}/>
-        </Row>
-      ))}
+        {lessons && lessons.map((lesson)=>(
+         <Row>
+          <LessonCard lesson={lesson} deleteLesson ={deleteLesson}/>
+         </Row>
+        ))}
+        </Flex>
+        </Spinner>
     </Flex>
-      )
-};
+    )
+});

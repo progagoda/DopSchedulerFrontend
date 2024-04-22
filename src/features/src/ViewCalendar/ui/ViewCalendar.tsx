@@ -4,39 +4,35 @@ import {Calendar, type CalendarProps,Flex, Spinner} from '@shared/ui'
 import type { Dayjs } from 'dayjs';
 import _ from 'lodash';
 import { memo } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { useNavigate, } from 'react-router-dom';
 
 import { useAllLessonsQuery } from '../api';
-import { dayActions } from '../model/slice';
 
 /* eslint-disable-next-line */
 export interface MainProps {}
 
 
 const ViewCalendar = memo((props: MainProps) => {
-
   const userId = useSelector(getUserIdSelector);
-  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const {data: calendarData, isLoading} = useAllLessonsQuery({
-    userId: userId || '1',
-  }, {skip: !userId})
+  const {data: calendarData, isLoading} = useAllLessonsQuery();
 
   const handleSelect = (newValue: Dayjs)=>{
     const date = newValue.format('YYYY-MM-DD')
-    const targetLessons = _.filter(calendarData?.lessons,{day:{date}})
-    dispatch(dayActions.setCurrentDay({id:'1', date, lessons: targetLessons}))
     const url = routerConfig.RouterPath.day.replace(':date','')
     navigate(url+date)
   }
 
   const getListData = (value: Dayjs) => {
     const date = value.format('YYYY-MM-DD')
-    const targetLessons= _.filter(calendarData?.lessons,{day:{date: date}})
+    if(calendarData){
+      const targetLessons=  calendarData.filter(lesson=> lesson.date == date)
+      return targetLessons;
+    }
     
-    return targetLessons;
+    return null;
   }
 
   const dateCellRender = (value: Dayjs) => {
@@ -44,9 +40,9 @@ const ViewCalendar = memo((props: MainProps) => {
     
   return (
     <ul className="events">
-      {lessonsByDay.map((lesson)=>
-          (<li key={lesson?.preview}>
-            {lesson?.preview}
+      {lessonsByDay && lessonsByDay.map((lesson)=>
+          (<li key={lesson.id}>
+            {lesson?.name}
           </li>)
       )}
     </ul>

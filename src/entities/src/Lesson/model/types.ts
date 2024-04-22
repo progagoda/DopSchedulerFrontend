@@ -1,17 +1,12 @@
 export type TLesson = {
     id: number;
-    preview: string;
-    day: {
-        date: string;
-        startTime: string;
-        endTime: string;
-    }
-    info: {
-        subject: string;
-        group: string;
-    } 
-    place:{
-        location?: string;
-        zoomLink?: string;
-    }
+    name: string;
+    user_id: number;
+    date: string,
+    start_time: string;
+    end_time: string;
+    location?: string;
+    zoom_link?: string;
+    group_name: string;
+    group_id: number;
 }

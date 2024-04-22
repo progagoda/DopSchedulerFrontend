@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { consts } from '@shared/configs'
 
-import {  TLessonCardSchemeArgs } from './model/types'
+import {  TLessonCardSchemeArgs, TLessonListSchemeApi, TLessonListSchemeArgs } from './model/types'
 const {localStorageConst} = consts
 
 export const lessonCardApi = createApi({
@@ -18,14 +18,23 @@ export const lessonCardApi = createApi({
       return headers;
     },
   }),
+  tagTypes: ['Lessons'],
   endpoints: (builder) => ({
-    lesson: builder.mutation<void, TLessonCardSchemeArgs>({
-      query: ({lessonId}) => ({
-        method: 'POST',
-        url: `delete/${lessonId}`,
+    allLessonsByDay: builder.query<TLessonListSchemeApi, TLessonListSchemeArgs>({
+      query: ({date}) => ({
+        url: `/${date}`,
       }),
+      providesTags: ['Lessons'],
+    }),
+
+    deleteLesson: builder.mutation<void, TLessonCardSchemeArgs>({
+      query: ({lessonId}) => ({
+        method: 'DELETE',
+        url: `/${lessonId}`,
+      }),
+      invalidatesTags: ['Lessons']
     }),
   }),
 })
 
-export const { useLessonMutation } = lessonCardApi
+export const { useDeleteLessonMutation, useAllLessonsByDayQuery } = lessonCardApi
