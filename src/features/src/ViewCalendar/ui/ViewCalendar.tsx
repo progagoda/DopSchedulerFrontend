@@ -1,10 +1,7 @@
-import { getUserIdSelector } from '@entities';
 import { routerConfig } from '@shared/configs';
 import {Calendar, type CalendarProps,Flex, Spinner} from '@shared/ui'
 import type { Dayjs } from 'dayjs';
-import _ from 'lodash';
 import { memo } from 'react';
-import { useSelector } from 'react-redux';
 import { useNavigate, } from 'react-router-dom';
 
 import { useAllLessonsQuery } from '../api';
@@ -14,7 +11,6 @@ export interface MainProps {}
 
 
 const ViewCalendar = memo((props: MainProps) => {
-  const userId = useSelector(getUserIdSelector);
   const navigate = useNavigate();
 
   const {data: calendarData, isLoading} = useAllLessonsQuery();
@@ -28,7 +24,8 @@ const ViewCalendar = memo((props: MainProps) => {
   const getListData = (value: Dayjs) => {
     const date = value.format('YYYY-MM-DD')
     if(calendarData){
-      const targetLessons=  calendarData.filter(lesson=> lesson.date == date)
+      const targetLessons=  calendarData.filter(lesson=> lesson.date === date)
+        
       return targetLessons;
     }
     

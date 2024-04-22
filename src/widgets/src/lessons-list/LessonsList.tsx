@@ -1,11 +1,10 @@
 import { LessonCard, useDeleteLessonMutation } from "@features";
+import { useAllLessonsByDayQuery } from "@features";
 import {Empty, Flex, Row, Spinner, Typography } from "@shared/ui";
+import _ from "lodash";
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { useParams } from "react-router-dom";
-
-import { useAllLessonsByDayQuery } from "@features";
-import _ from "lodash";
 
 
 export const LessonsList = memo(() => {
@@ -30,15 +29,15 @@ export const LessonsList = memo(() => {
  
   return (
     <Flex vertical flex={1}>
-    <Spinner spinning={isLoading|| isLoadingDelete} size="large">
-    <Flex vertical gap={10} flex={1}>
-        {lessons && lessons.map((lesson)=>(
-         <Row>
-          <LessonCard lesson={lesson} deleteLesson ={deleteLesson}/>
-         </Row>
+      <Spinner spinning={isLoading|| isLoadingDelete} size="large">
+        <Flex vertical gap={10} flex={1}>
+          {lessons && lessons.map((lesson)=>(
+            <Row>
+              <LessonCard lesson={lesson} deleteLesson ={deleteLesson}/>
+            </Row>
         ))}
         </Flex>
-        </Spinner>
+      </Spinner>
     </Flex>
     )
 });

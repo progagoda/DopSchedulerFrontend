@@ -1,8 +1,8 @@
+import { TLesson } from "@entities"
+
 export type TLessonCardSchemeArgs = {
     lessonId: number;
 }
-
-import { TLesson } from "@entities"
 
 export type TLessonListSchemeApi = TLesson[];
 
