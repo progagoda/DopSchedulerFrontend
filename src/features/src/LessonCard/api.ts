@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { consts } from '@shared/configs'
+import { BACK_URL } from 'src/shared/configs/src/const/const'
 
 import {  TLessonCardSchemeArgs, TLessonListSchemeApi, TLessonListSchemeArgs } from './model/types'
 const {localStorageConst} = consts
@@ -7,7 +8,7 @@ const {localStorageConst} = consts
 export const lessonCardApi = createApi({
   reducerPath: 'lessonCardApi',
   baseQuery: fetchBaseQuery({ 
-    baseUrl: 'http://localhost:8000/lesson',
+    baseUrl: `${BACK_URL}/lesson`,
     prepareHeaders: (headers, { getState }) => {
       const authData = localStorage.getItem(localStorageConst.USER_LOCAL_STORAGE_KEY)
       const token = authData ? JSON.parse(authData).token : null;
