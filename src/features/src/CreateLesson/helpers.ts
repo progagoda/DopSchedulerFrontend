@@ -23,6 +23,6 @@ export const findSequence = (
         }
              
             return {
-                disabledHours: () => _.concat(_.range(0, startHour),disableHours)
+                disabledHours: () => _.concat(_.range(0, 7), _.range(7, startHour), disableHours)
             }
         }
