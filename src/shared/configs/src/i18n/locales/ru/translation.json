@@ -4,6 +4,16 @@
         "schedule": "Расписание",
         "create": "Cоздать доп"
     },
+    "createDrawerLesson":{
+      "title": "Добавление занятия",
+      "chooseGroup": "Выберите группу",
+      "selectedGroups": "Текущие выбранные группы",
+      "planningTime": "Планируемое время занятия",
+      "reloadFreeTime": "Обновить свободное время для текущих групп",
+      "messages":{
+        "requiredGroup": "Должна быть выбрана хотя бы одна группа"
+      }
+    },
     "day":{
         "addDopButton": "Добавить занятие"
       },

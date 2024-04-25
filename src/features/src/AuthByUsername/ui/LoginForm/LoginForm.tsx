@@ -49,6 +49,7 @@ return (
     <Form.Item<TLoginSchemaArgs>
       wrapperCol={{span: 25 }}
       name="password"
+
       rules={[{ required: true, message: t('messages.requiredPassword') }]}
     >
       <Input placeholder='Password'/>

@@ -7,7 +7,7 @@ import styled from 'styled-components';
 const StyledSpin = styled(Spin)`
     height: 150px;
 `
-type TSpinnner = SpinProps &{
+type TSpinnner = SpinProps & {
     theme?:{
         mode: 'light'|'dark'
     }

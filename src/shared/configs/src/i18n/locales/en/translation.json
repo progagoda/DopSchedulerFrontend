@@ -4,6 +4,16 @@
         "schedule": "Schedule",
         "create": "Create lesson"
     },
+    "createDrawerLesson":{
+      "title": "Adding lesson",
+      "chooseGroup": "Choose group",
+      "selectedGroups": "Current selected groups",
+      "planningTime": "Planning of lesson time",
+      "reloadFreeTime": "Reload free time for current groups",
+      "messages":{
+        "requiredGroup": "You must choose 1 or more group"
+      }
+    },
     "day":{
       "addDopButton": "Add lesson"
     },

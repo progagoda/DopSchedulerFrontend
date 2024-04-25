@@ -1,4 +1,5 @@
 import { LoginForm } from '@features';
+import { consts } from '@shared/configs';
 import {Flex, Layout} from '@shared/ui';
 
 import { StyledLogo } from './styles';
@@ -8,9 +9,9 @@ export interface AuthProps {
 
 export function Auth(props: AuthProps) {
   return (
-    <Layout style={{ minHeight: '100vh' }}>
+    <Layout style={{ minHeight: '92vh' }}>
       <Flex vertical flex = {1} justify='center' align='center' gap={'10px'}>
-        <StyledLogo>DOP SHEDULER</StyledLogo>
+        <StyledLogo>{consts.globalConst.logoText}</StyledLogo>
         <LoginForm/>
       </Flex>
     </Layout>

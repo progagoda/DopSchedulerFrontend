@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import {Flex} from 'antd'
 
-import { Calendar } from './Calendar';
+import { TimeRangePicker } from './TimeRangePicker';
 
-const meta: Meta<typeof Calendar> = {
-  component: Calendar,
+const meta: Meta<typeof TimeRangePicker> = {
+  component: TimeRangePicker,
   decorators: [
     (Story) => (
       <Flex align='center' justify='center'>
@@ -12,22 +12,20 @@ const meta: Meta<typeof Calendar> = {
       </Flex>
     ),
   ],
-  parameters: {
-    loki: { skip: true },
-  },
 };
 export default meta;
-
-type Story = StoryObj<typeof Calendar>;
+type Story = StoryObj<typeof TimeRangePicker>;
 
 export const Dark: Story = {
   args: {
     theme: {mode: 'dark'},
+    type: "default",
+    open: true
   },
 };
-
 export const Light: Story = {
   args: {
     theme: {mode: 'light'},
+    type: "light",
   },
 };

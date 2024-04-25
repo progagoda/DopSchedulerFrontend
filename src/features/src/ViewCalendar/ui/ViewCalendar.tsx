@@ -15,10 +15,12 @@ const ViewCalendar = memo((props: MainProps) => {
 
   const {data: calendarData, isLoading} = useAllLessonsQuery();
 
-  const handleSelect = (newValue: Dayjs)=>{
-    const date = newValue.format('YYYY-MM-DD')
-    const url = routerConfig.RouterPath.day.replace(':date','')
-    navigate(url+date)
+  const handleSelect = (newValue: Dayjs, info: { source: 'year' | 'month' | 'date' | 'customize' })=>{
+    if(info.source==='date'){
+      const date = newValue.format('YYYY-MM-DD')
+      const url = routerConfig.RouterPath.day.replace(':date','')
+      navigate(url+date)
+    }
   }
 
   const getListData = (value: Dayjs) => {
@@ -47,9 +49,6 @@ const ViewCalendar = memo((props: MainProps) => {
   };
   const cellRender: CalendarProps<Dayjs>['cellRender'] = (current, info) => {
     if (info.type === 'date') return dateCellRender(current);
-    if (info.type === 'month') return null
-    
-    return info.originNode;
   };
 
   if (isLoading){

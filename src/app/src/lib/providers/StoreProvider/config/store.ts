@@ -1,5 +1,5 @@
 import { userReducer } from '@entities'
-import { calendarApi, lessonCardApi, loginFormApi } from '@features'
+import { calendarApi, createLessonApi, lessonCardApi, loginFormApi } from '@features'
 import { configureStore, ReducersMapObject } from '@reduxjs/toolkit'
 
 import { StateScheme } from './StateScheme'
@@ -10,6 +10,7 @@ export function createReduxStore(initialState?: StateScheme){
       [loginFormApi.reducerPath]: loginFormApi.reducer,
       [calendarApi.reducerPath]: calendarApi.reducer,
       [lessonCardApi.reducerPath]: lessonCardApi.reducer,
+      [createLessonApi.reducerPath]: createLessonApi.reducer,
     }
     
 return configureStore({
@@ -20,6 +21,7 @@ return configureStore({
             loginFormApi.middleware, 
             calendarApi.middleware, 
             lessonCardApi.middleware,
+            createLessonApi.middleware,
           ),
       })
 }
