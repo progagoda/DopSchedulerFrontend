@@ -83,7 +83,7 @@ const CreateLessonDrawer = ({open, onClose}: TCreateLesson)=>{
         }
         
       return {
-          disabledHours: () => disabledTimeHour
+          disabledHours: () => _.concat(_.range(0,8),disabledTimeHour)
         }
       }
 
