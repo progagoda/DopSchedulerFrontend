@@ -2,20 +2,33 @@
     "testExample": "Тестовый  пример",
     "routes": {
         "schedule": "Расписание",
-        "create": "Cоздать доп"
+        "profile": "Профиль"
     },
     "createDrawerLesson":{
+      "cancelButton": "Отменить",
       "title": "Добавление занятия",
+      "location": "Адрес",
+      "saveButton": "Сохранить", 
+      "locationPlaceholder": "Кронверский 14, 1444 аудитория",
+      "lessonName": "Название занятия",
+      "lessonNamePlaceholder": "БЛПС/ОПД/Рубежка",
       "chooseGroup": "Выберите группу",
       "selectedGroups": "Текущие выбранные группы",
       "planningTime": "Планируемое время занятия",
       "reloadFreeTime": "Обновить свободное время для текущих групп",
       "messages":{
-        "requiredGroup": "Должна быть выбрана хотя бы одна группа"
-      }
+        "requiredTime": "Введите начало и конец занятия",
+        "requiredName": "Введите имя",
+        "requiredGroup": "Должна быть выбрана хотя бы одна группа",
+        "requiredLocationOrLink": "Заполните хотя бы адрес или ссылку на зум"
+      },
+      "zoomLink": "Ссылка",
+      "zoomLinkPlaceholder": "https://itmo.zoom.us/"
     },
     "day":{
-        "addDopButton": "Добавить занятие"
+        "addDopButton": "Добавить занятие",
+        "invalidDateTitle": "Некорректная дата",
+        "invalidDateDescription": "Исправьте дату. Пример: 2024-04-29"
       },
     "header": {
        "logout": "Выход"

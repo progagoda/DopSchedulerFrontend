@@ -47,6 +47,6 @@ export const System = ()=>{
     </Layout>
   )
 
-   return isAuth ? renderMainContent() : <Auth/>
+   return isAuth || savedUser ? renderMainContent() : <Auth/>
    
 }

@@ -3,7 +3,7 @@ import _ from "lodash";
 import { TApiDisabledStartTime } from "./model/types";
 
 export const findSequence = (
-    disabledTimes: TApiDisabledStartTime, 
+    disabledTimes: TApiDisabledStartTime[], 
     startHour: number)=>
         {
             const maxEndTime = 24; 
@@ -25,4 +25,4 @@ export const findSequence = (
             return {
                 disabledHours: () => _.concat(_.range(7, startHour), disableHours)
             }
-        }
+}

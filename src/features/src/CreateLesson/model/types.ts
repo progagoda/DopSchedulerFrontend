@@ -16,4 +16,14 @@ export type TCheckFreeDateArgs = {
 export type TApiDisabledStartTime = {
     disableHour: number;
     disabledMinutes: number[];
-}[]
+}
+
+export type TCreateLessonArgs = {
+    name: string;
+    date: string,
+    start_time: string;
+    end_time: string;
+    location?: string;
+    zoom_link?: string;
+    group_ids: number[];
+}

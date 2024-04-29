@@ -2,7 +2,7 @@
 import { Select as AntSelect, type SelectProps} from 'antd';
 import styled from 'styled-components';
 
-import { backgroundColor, borderColor, hoverBackgroundColor, textColor } from '../Colors';
+import { backgroundColor, borderColor, hoverBackgroundColor, placeholderColor, textColor } from '../Colors';
 
 
 const StyledSelect = styled(AntSelect)`
@@ -13,7 +13,7 @@ const StyledSelect = styled(AntSelect)`
   color: ${textColor}
   }
   .ant-select-selection-placeholder{
-    color: ${textColor};
+    color: ${placeholderColor};
   }
   .ant-select-selection-item {
     background: ${hoverBackgroundColor} !important;

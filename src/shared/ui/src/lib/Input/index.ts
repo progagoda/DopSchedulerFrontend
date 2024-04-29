@@ -1,1 +1,1 @@
-export {Input} from './Input';
+export {FormInput,FormPassword, Input} from './Input';

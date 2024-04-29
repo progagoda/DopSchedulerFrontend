@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { consts } from '@shared/configs'
 import { BACK_URL } from 'src/shared/configs/src/const/const'
 
-import { TApiDisabledStartTime, TApiGroup, TCheckFreeDateArgs, TGroup } from './model/types'
+import { TApiDisabledStartTime, TApiGroup, TCheckFreeDateArgs, TCreateLessonArgs, TGroup } from './model/types'
 
 const {localStorageConst} = consts
 
@@ -20,6 +20,7 @@ export const createLessonApi = createApi({
       return headers;
     },
   }),
+  tagTypes: ['Lessons'],
   endpoints: (builder) => ({
     getAllGroup: builder.query<TGroup[], void>({
       query:()=>({url:'group/all' }),
@@ -28,14 +29,24 @@ export const createLessonApi = createApi({
         value: group.id
       }))
     }),
-    getFreeTime: builder.mutation<TApiDisabledStartTime, TCheckFreeDateArgs>({
+
+    getFreeTime: builder.mutation<TApiDisabledStartTime[], TCheckFreeDateArgs>({
         query:(args)=>({
             method: 'POST',
             body: args,
             url:'lesson/disabled-start-time'
          }),
+      }),
+
+    сreateLesson: builder.mutation<void, TCreateLessonArgs>({
+       invalidatesTags: ['Lessons'],
+        query:(args)=>({
+            method: 'POST',
+            body: args,
+            url:'lesson/create'
+         }),
       })
   }),
 })
 
-export const {useGetAllGroupQuery, useGetFreeTimeMutation } = createLessonApi
+export const {useGetAllGroupQuery, useGetFreeTimeMutation, useСreateLessonMutation} = createLessonApi

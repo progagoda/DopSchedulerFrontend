@@ -1,5 +1,5 @@
 import {userActions} from '@entities'
-import { Button,Form,Input, Typography } from '@shared/ui';
+import { Button,Form,FormPassword,Input, Typography } from '@shared/ui';
 import React, { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
@@ -52,7 +52,7 @@ return (
 
       rules={[{ required: true, message: t('messages.requiredPassword') }]}
     >
-      <Input placeholder='Password'/>
+      <FormPassword placeholder='Password'/>
     </Form.Item>
 
     <Form.Item wrapperCol={{offset: 9, span:25}}>

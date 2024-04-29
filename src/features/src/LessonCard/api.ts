@@ -1,3 +1,4 @@
+import { TLesson } from '@entities'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { consts } from '@shared/configs'
 import { BACK_URL } from 'src/shared/configs/src/const/const'
@@ -26,16 +27,17 @@ export const lessonCardApi = createApi({
         url: `/${date}`,
       }),
       providesTags: ['Lessons'],
+      keepUnusedDataFor: 0,
     }),
 
-    deleteLesson: builder.mutation<void, TLessonCardSchemeArgs>({
+    deleteLesson: builder.mutation<TLesson, TLessonCardSchemeArgs>({
       query: ({lessonId}) => ({
         method: 'DELETE',
         url: `/${lessonId}`,
       }),
-      invalidatesTags: ['Lessons']
+      invalidatesTags: ['Lessons'],
     }),
   }),
 })
 
-export const { useDeleteLessonMutation, useAllLessonsByDayQuery } = lessonCardApi
+export const { useDeleteLessonMutation, useAllLessonsByDayQuery, useLazyAllLessonsByDayQuery } = lessonCardApi

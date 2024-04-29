@@ -22,3 +22,20 @@ export const Button = styled(AntButton)`
     color: ${textColor}
     }
 `
+export const FormButton = styled(AntButton)`
+ background: ${hoverBackgroundColor};
+ color: ${textColor};
+ border: 1px solid ${textColor};
+
+ &.ant-btn-default:not(:disabled):not(.ant-btn-disabled):hover{
+  background: ${hoverBackgroundColor};
+  border: 1px solid red;
+  color: ${textColor}
+  }
+
+&.ant-btn-primary:not(:disabled):not(.ant-btn-disabled):hover {
+    background: ${hoverBackgroundColor};
+    border: 1px solid ${borderColor};
+    color: ${textColor}
+    }
+`

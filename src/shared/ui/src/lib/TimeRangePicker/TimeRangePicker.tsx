@@ -6,27 +6,30 @@ import { hoverBackgroundColor, textColor } from '../Colors';
 
 
 export const StyledTimeRangePicker = styled(AntTimePicker.RangePicker)`
-&.ant-picker {
-  background: ${hoverBackgroundColor};
-  color: ${textColor};
-  border: 1px solid ${textColor};
-}
-.ant-picker-input {
+  &.ant-picker {
+    background: ${hoverBackgroundColor};
     color: ${textColor};
-    input::placeholder{
-      color: ${textColor};
+    border: 1px solid ${textColor};
+    .ant-picker-outlined .ant-picker-status-error:not(.ant-picker-disabled) {
+      background: ${hoverBackgroundColor};
     }
   }
- .ant-picker-suffix{
-    color: ${textColor};
- }
- .ant-picker-clear, .ant-picker-clear:hover{
-    color: ${textColor};
- }
-}
-.ant-picker-separator{
-  color: ${textColor}
-}
+  .ant-picker-input {
+      color: ${textColor};
+      input::placeholder{
+        color: ${textColor};
+      }
+    }
+  .ant-picker-suffix{
+      color: ${textColor};
+  }
+  .ant-picker-clear, .ant-picker-clear:hover{
+      color: ${textColor};
+  }
+  }
+  .ant-picker-separator{
+    color: ${textColor}
+  }
 `
 type TTimeRangePickerProps = TimeRangePickerProps & {
   theme?: {

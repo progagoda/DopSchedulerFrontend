@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { antIcons,Menu, Sider } from 'src/shared/ui/src';
 
 const {AppRoutes} = routerConfig
-const {CalendarOutlined, PlusOutlined} = antIcons;
+const {CalendarOutlined, UserOutlined} = antIcons;
 
 type AppRoutes = routerConfig.AppRoutes
 type TShellRoutes = Exclude<AppRoutes, "day">
@@ -19,7 +19,7 @@ export const Shell= memo((props: ShellProps)=> {
   
   const icons:Record<TShellRoutes, ReactNode>= {
     [AppRoutes.SHEDULE]: <CalendarOutlined />,
-    [AppRoutes.CREATE]: <PlusOutlined />,
+    [AppRoutes.PROFILE]: <UserOutlined />,
   }
   const items = Object.values(shellRoutes).map((path) => ({
     key: path,

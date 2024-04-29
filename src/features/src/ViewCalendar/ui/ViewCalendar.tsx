@@ -41,7 +41,7 @@ const ViewCalendar = memo((props: MainProps) => {
     <ul className="events">
       {lessonsByDay && lessonsByDay.map((lesson)=>
           (<li key={lesson.id}>
-            {lesson?.name}
+            {lesson?.start_time} {lesson?.name}
           </li>)
       )}
     </ul>
