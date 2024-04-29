@@ -1,7 +1,7 @@
 {
-  "name": "createLesson",
+  "name": "profile",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
-  "sourceRoot": "src/pages/create-lesson/src",
+  "sourceRoot": "src/pages/profile/src",
   "projectType": "library",
   "tags": ["pages"],
   "targets": {}

@@ -3,6 +3,6 @@
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "src/app/src",
   "projectType": "library",
-  "tags": [],
+  "tags": ["app"],
   "targets": {}
 }

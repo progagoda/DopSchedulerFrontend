@@ -1,6 +1,5 @@
-export type TLoginSchema  = {
+export type TLoginSchemaArgs  = {
     username?: string;
     password?: string;
     remember?: boolean;
-    token?: string;
   };

@@ -1,9 +1,9 @@
 import { createSlice,PayloadAction } from '@reduxjs/toolkit'
 
-import { TLoginSchema } from '../types/loginSchema';
+import { TLoginSchemaArgs } from '../types/loginSchema';
 
 
-const initialState: TLoginSchema = {
+const initialState: TLoginSchemaArgs = {
 }
 
 export const loginSlice = createSlice({

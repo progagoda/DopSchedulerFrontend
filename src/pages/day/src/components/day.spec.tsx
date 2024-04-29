@@ -1,4 +1,3 @@
-// eslint-disable-next-line @nx/enforce-module-boundaries
 import {providersConfig} from '@app';
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
@@ -18,7 +17,9 @@ describe('CreateLesson', () => {
       },
       loginFormApi: undefined,
       calendarApi: undefined,
+      lessonCardApi: undefined,
       day: {},
+      lessonsListApi: undefined
       }
     const { baseElement } = render(
       <StoreProvider initialState={initialState}>

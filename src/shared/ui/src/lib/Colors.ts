@@ -7,14 +7,18 @@ export const Colors = {
         secondary: generate('#F3F3F3')[6],
         bordered: generate('#EBEBEB')[5],
         text: generate('#000000')[5],
-        textWarning: '#d74848'    
+        textWarning: '#d74848',
+        placeholder: '#787E8B', 
+        currentTheme: 'light'
     },
     dark: {
         primary: generate('#000000')[5],
         secondary: generate('#1F2023')[5],
         bordered: generate('#26272C')[5],
         text:  generate('#ffffff')[5],
-        textWarning: '#ff0000'
+        textWarning: '#ff0000',
+        placeholder: '#787E8B',
+        currentTheme: 'dark'
     }
  }
 
@@ -46,4 +50,14 @@ export const borderColor = theme('mode', {
   export const warningTextColor = theme('mode', {
     light: Colors.light.textWarning,
     dark: Colors.dark.textWarning,
+  });
+
+  export const placeholderColor = theme('mode', {
+    light: Colors.light.placeholder,
+    dark: Colors.dark.placeholder,
+  });
+
+  export const currentTheme = theme('mode', {
+    light: Colors.light.currentTheme,
+    dark: Colors.dark.currentTheme,
   });

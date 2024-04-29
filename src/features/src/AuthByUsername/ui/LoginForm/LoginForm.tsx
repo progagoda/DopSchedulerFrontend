@@ -1,20 +1,20 @@
 import {userActions} from '@entities'
-import { Button,Form,Input, Typography } from '@shared/ui';
+import { Button,Form,FormPassword,Input, Typography } from '@shared/ui';
 import React, { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
 
 import { useLoginMutation } from '../../api';
 import { loginActions } from '../../model/slice/loginSlice';
-import { TLoginSchema } from '../../model/types';
+import { TLoginSchemaArgs } from '../../model/types';
 
 export const LoginForm: React.FC = memo(() => {
   const {t} = useTranslation('translation', { keyPrefix: 'auth' }); 
   const [sendAuth, {data: userInfo, isError, isLoading}] = useLoginMutation()
   const dispatch = useDispatch();
-  const [form] = Form.useForm<TLoginSchema>();
+  const [form] = Form.useForm<TLoginSchemaArgs>();
   
-  const handleFinish = useCallback((form: TLoginSchema) =>{
+  const handleFinish = useCallback((form: TLoginSchemaArgs) =>{
     sendAuth(form)
     form.username && dispatch(loginActions.setUsername(form.username))
     form.password && dispatch(loginActions.setPassword(form.password))
@@ -38,7 +38,7 @@ return (
     autoComplete="off"
   >
     {isError && <Typography textWarning>{t('messages.error')}</Typography>}
-    <Form.Item
+    <Form.Item<TLoginSchemaArgs>
       wrapperCol={{span: 25 }}
       name="username"
       rules={[{ required: true, message: t('messages.requiredUsername') }]}
@@ -46,12 +46,13 @@ return (
       <Input placeholder='Login'/>
     </Form.Item>
 
-    <Form.Item<TLoginSchema>
+    <Form.Item<TLoginSchemaArgs>
       wrapperCol={{span: 25 }}
       name="password"
+
       rules={[{ required: true, message: t('messages.requiredPassword') }]}
     >
-      <Input placeholder='Password'/>
+      <FormPassword placeholder='Password'/>
     </Form.Item>
 
     <Form.Item wrapperCol={{offset: 9, span:25}}>

@@ -1,3 +1,3 @@
-import { TLoginSchema } from "../../types/loginSchema";
+import { TLoginSchemaArgs } from "../../types/loginSchema";
 
-export const getLoginStateSelector = (state: { loginForm: TLoginSchema }) => state.loginForm;
+export const getLoginStateSelector = (state: { loginForm: TLoginSchemaArgs }) => state.loginForm;

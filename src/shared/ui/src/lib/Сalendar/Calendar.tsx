@@ -2,13 +2,14 @@
 import { Calendar as AntCalendar} from 'antd';
 import styled from 'styled-components';
 
-import { backgroundColor, hoverBackgroundColor, textColor } from '../Colors';
+import { backgroundColor, currentTheme, hoverBackgroundColor, textColor } from '../Colors';
 
 
 export const Calendar = styled(AntCalendar)`
     background: ${backgroundColor};
     overflow: auto;
     height: 92vh;
+    color-scheme: ${currentTheme};
     .ant-picker-body, .ant-picker-content, .ant-picker-panel {
         background: ${backgroundColor};
         th {
@@ -23,9 +24,13 @@ export const Calendar = styled(AntCalendar)`
                 color: ${textColor} ;
             };
             .events{
+                padding-left: 1px;
                 color: ${textColor};
             }
         }
+    }
+    .ant-picker-calendar-date-today{
+        background: ${backgroundColor} !important;
     }
 
 `

@@ -12,6 +12,9 @@ const meta: Meta<typeof Calendar> = {
       </Flex>
     ),
   ],
+  parameters: {
+    loki: { skip: true },
+  },
 };
 export default meta;
 

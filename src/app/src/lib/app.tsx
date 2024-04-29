@@ -1,71 +1,26 @@
-import { getUserStateSelector, userActions } from '@entities';
-import { Auth } from '@pages/auth';
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import {consts, i18nConfig, routerConfig} from '@shared/configs'
-import {Flex, Layout, Spinner } from '@shared/ui';
-// eslint-disable-next-line @nx/enforce-module-boundaries
-import {Header, Shell} from '@widgets';
-import { Suspense, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import {Flex, Spinner } from '@shared/ui';
+import {Header} from '@widgets';
+import { Suspense, useCallback, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
 
-import {AppRouter} from './providers';
-const { Content } = Layout;
+import { System } from './components/System';
 
-
-export const System = ()=>(
-  <Layout style={{height: '92vh'}}>
-    <Shell/>
-    <Layout>
-      <Content>
-        <Suspense fallback="Loading...">
-          <AppRouter />
-        </Suspense>
-      </Content>
-    </Layout>
-  </Layout>
-)
+const Loading = () => (
+  <Flex flex={1} justify='center' align='center' style={{height:'100vh'}}>
+    <Spinner size='large'/>
+  </Flex>
+  )
 
 export const App = () => {
   const [isLightTheme, setLightTheme] = useState(false);
-  const savedUser = localStorage.getItem(consts.localStorageConst.USER_LOCAL_STORAGE_KEY)
-  const dispatch = useDispatch();
-  const navigate = useNavigate()
-  const currentUser = useSelector(getUserStateSelector);
+  const switchTheme = useCallback(()=>setLightTheme(!isLightTheme),[isLightTheme])
   
-
-  useEffect(()=>{
-    if(!currentUser){
-      if(savedUser){
-        dispatch(userActions.login(JSON.parse(savedUser)))
-        navigate(routerConfig.RouterPath.schedule)
-      }
-      else{
-      navigate('/auth')
-      }
-    }
-    else{
-      navigate(routerConfig.RouterPath.schedule)
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentUser, savedUser])
-
 return (
   <ThemeProvider theme={{mode: isLightTheme ? 'light': 'dark'}}>
-    <Suspense fallback={
-      <Flex flex={1} justify='center' align='center' style={{height:'100vh'}}>
-        <Spinner size='large'/>
-      </Flex>
-    }
-  >
-      <Header switchTheme={()=> setLightTheme(!isLightTheme)}/>
-      {savedUser ? 
-        <System/> :
-        <Routes>
-          <Route path={'/auth'} element={<Auth/>} />
-        </Routes>
-    }
+    <Suspense fallback={<Loading/>}
+    >
+      <Header switchTheme={switchTheme}/>
+      <System/>
     </Suspense>
   </ThemeProvider>
 )
