@@ -1,4 +1,4 @@
-// eslint-disable-next-line @nx/enforce-module-boundaries
+/* eslint-disable @nx/enforce-module-boundaries */
 import {Day} from '@pages/day';
 import {Profile} from '@pages/profile'
 import { Schedule } from '@pages/schedule';

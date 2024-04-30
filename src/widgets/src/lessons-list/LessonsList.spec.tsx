@@ -12,6 +12,7 @@ describe('Header', () => {
   const initialState = {
     user: {
       authData: {
+        fullname: 'test',
         id:'1',
         username: 'admin',
         token: 'testToken',
@@ -19,9 +20,10 @@ describe('Header', () => {
     },
     loginFormApi: undefined,
     calendarApi: undefined,
+    lessonCardApi: undefined,
     day: {},
     lessonsListApi: undefined,
-    lessonCardApi: undefined,
+    createLessonApi: undefined,
     }
 
   const renderLessonsList = ()=> (
