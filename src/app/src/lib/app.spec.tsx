@@ -9,6 +9,7 @@ describe('App', () => {
   const initialState = {
     user: {
       authData: {
+        fullname: 'test',
         id:'1',
         username: 'admin',
         token: 'testToken',
@@ -17,8 +18,9 @@ describe('App', () => {
     loginFormApi: undefined,
     calendarApi: undefined,
     lessonCardApi: undefined,
-    lessonsListApi: undefined,
     day: {},
+    lessonsListApi: undefined,
+    createLessonApi: undefined,
     }
     const renderApp = ()=>(
       <BrowserRouter>

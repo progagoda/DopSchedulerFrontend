@@ -19,6 +19,9 @@ export const userSlice = createSlice({
       localStorage.removeItem(localStorageConst.USER_LOCAL_STORAGE_KEY)
       state.authData = undefined
    },
+   changeFullname: (state, {payload: fullname}: PayloadAction<string>) => {
+      state.authData = state.authData && {...state.authData, fullname}
+   }
   }
 })
 

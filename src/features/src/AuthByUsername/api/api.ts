@@ -8,7 +8,7 @@ const {localStorageConst} = consts
 export const loginFormApi = createApi({
   reducerPath: 'loginFormApi',
   baseQuery: fetchBaseQuery({ 
-    baseUrl: `${BACK_URL}/auth`,
+    baseUrl: `${BACK_URL}`,
     prepareHeaders: (headers, { getState }) => {
       const authData = localStorage.getItem(localStorageConst.USER_LOCAL_STORAGE_KEY)
       const token = authData ? JSON.parse(authData).token : null;
@@ -22,14 +22,21 @@ export const loginFormApi = createApi({
   endpoints: (builder) => ({
     login: builder.mutation<TLoginSchemaApi, TLoginSchemaArgs>({
       query: (args) => ({
-        url: '/login',
+        url: 'auth/login',
         body: args,
         method: 'POST'
       }),
     }),
     checkAuth: builder.query<void,void>({
-      query: () => ({url: '/login'}),
+      query: () => ({url: 'auth/login'}),
+    }),
+    changeFullName: builder.mutation<void, {fullname: string}>({
+      query: (args) => ({
+        url: 'users/fullname',
+        body: args,
+        method: 'POST'
+      }),
     }),
   }),
 })
-export const {useLoginMutation, useCheckAuthQuery} = loginFormApi
+export const {useLoginMutation, useCheckAuthQuery, useChangeFullNameMutation} = loginFormApi

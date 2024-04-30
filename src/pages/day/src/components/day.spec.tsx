@@ -10,6 +10,7 @@ describe('CreateLesson', () => {
     const initialState = {
       user: {
         authData: {
+          fullname: 'test',
           id:'1',
           username: 'admin',
           token: 'testToken',
@@ -19,7 +20,8 @@ describe('CreateLesson', () => {
       calendarApi: undefined,
       lessonCardApi: undefined,
       day: {},
-      lessonsListApi: undefined
+      lessonsListApi: undefined,
+      createLessonApi: undefined,
       }
     const { baseElement } = render(
       <StoreProvider initialState={initialState}>
