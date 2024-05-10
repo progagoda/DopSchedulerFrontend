@@ -1,0 +1,6 @@
+{
+    "sonarlint.connectedMode.project": {
+        "connectionId": "progagoda",
+        "projectKey": "progagoda_dop-schedule-frontend"
+    }
+}
